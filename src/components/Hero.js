@@ -7,24 +7,20 @@ import Skills from "./skill-carousel";
 import profileImage from './images/profile.png';
 
 /* change the following to customize the page*/
-const name = "Varun Kothandaraman"
+const name = "Brian Manomaisupat"
 const degree = "Mechatronics and Biomedical Engineering" /* Replace this with job title after graduating*/
 const university = "McMaster University" /* Replace this with company name after graduating*/
-const emaiLink = "mailto:kothandv@mcmaster.ca"
-const email = "kothandv@mcmaster.ca"
-const linkedin = "https://www.linkedin.com/in/varun-ram/"
-const github = "https://github.com/Nuravar"
+const emaiLink = "mailto:brian.manomaisupat@gmail.com"
+const email = "brian.manomaisupat@gmail.com"
+const linkedin = "https://www.linkedin.com/in/brian-mano/"
+const github = "https://github.com/brianmano"
 const description = (
   <>
-  <strong>👋Hi!,</strong> <br /><br />
-    I am junior studying Mechatronics and Biomedical Engineering at McMaster University, <Text as="strong">currently looking for an internship for the 2024 Winter/Summer terms.</Text> 
-    {' '}Most recently, I have been working as a teaching assistant for{' '}
-    <Link href="https://www.eng.mcmaster.ca/ibiomed/" isExternal color="blue.500">
-      McMaster Engineering
-    </Link>{' '}and contributing to the{' '}
-    <Link href="https://www.mcmastersolarcar.com/" isExternal color="blue.500">
-      McMaster Solar Car Project
-    </Link>. <br /> <br /> In my free time, I enjoy playing the violin, graphic design, and playing football.
+  <strong>👋 Hello! ,</strong> <br /><br />
+    I'm Brian Manomaisupat, a junior studying Mechatronics and Biomedical Engineering at McMaster University, <Text as="strong">currently looking for an internship for the 2024 Winter/Summer terms.</Text> 
+    {' '} My ultimate goal is to make a positive impact on the world through learning and applying myself in the field of engineering, pushing the limits of what I can achieve! {' '}
+
+    <br /> <br /> In my free time, I love working on and modifying my car, swimming, and working out at the gym!
   </>
 );
 /*-------------------------------------------*/
@@ -62,6 +58,9 @@ const doubleArray = [
     [FaReact, 'React'],
 ];
 
+const fontcolourtitle = "white"
+const fontcolour2 = "#D3D3D3"
+const fontcolour3 = "#979797"
 
 const Hero = () => {
   
@@ -75,18 +74,18 @@ const Hero = () => {
       <Flex align="center" justify="center" minHeight="100vh">
           <VStack textAlign="center">
             <Box overflow="hidden" align="center">
-              <Heading fontSize={{ base: "9vw", md: "9vw", lg: "9vw" }} fontFamily="Clashgrotesk, sans-serif;">
+              <Heading color={fontcolourtitle} fontSize={{ base: "9vw", md: "9vw", lg: "9vw" }} fontFamily="Clashgrotesk, sans-serif;">
                 {name}
               </Heading>
             </Box>
             <HStack justify="space-between" spacing="4" width="100%">
               <Box overflow="hidden" align="left">
-                <Text fontSize={{ base: "2vw", md: "2vw", lg: "2vw" }} fontFamily="Clashgrotesk, sans-serif;">
+                <Text color={fontcolourtitle} fontSize={{ base: "2vw", md: "2vw", lg: "2vw" }} fontFamily="Clashgrotesk, sans-serif;">
                   {degree} @ {university}
                 </Text>
               </Box>
               <Box overflow="hidden" align="right">
-                <Text fontSize={{ base: "2vw", md: "2vw", lg: "2vw" }} fontFamily="Clashgrotesk, sans-serif;">
+                <Text color={fontcolourtitle} fontSize={{ base: "2vw", md: "2vw", lg: "2vw" }} fontFamily="Clashgrotesk, sans-serif;">
                   Based in Hamilton, ON
                 </Text>
               </Box>
@@ -114,7 +113,9 @@ const Hero = () => {
                   variant="outline"
                 />
               ) : (
-                <Button leftIcon={<FaEnvelope />} colorScheme="red" variant="outline">
+                <Button leftIcon={<FaEnvelope />} 
+                colorScheme="red" 
+                >
                   {email}
                 </Button>
               )}
@@ -133,7 +134,6 @@ const Hero = () => {
                 <Button
                   leftIcon={<FaLinkedin />}
                   colorScheme="linkedin"
-                  variant="outline"
                 >
                   LinkedIn
                 </Button>
@@ -167,17 +167,18 @@ const Hero = () => {
             </HStack>
           </VStack>
         </Flex>
-    <Skills /> 
+        <Skills /> 
+    
 
     <Flex justify="flex-start" width="100%" paddingX="10" flexDirection={{ base: 'column', md: 'row' }}>
       <VStack align="flex-start" spacing="3" flexWrap="wrap">
 
-        <Heading width="100%" paddingTop={10} id="experience">
+        <Heading color={fontcolour2} width="100%" paddingTop={10} id="experience">
             About Me        
         </Heading>
         <Flex>
         <Box paddingY ="1" width="100%">
-          <Text width={{base:"100%", lg: "50%"}}>
+          <Text color={fontcolour2} width={{base:"100%", lg: "50%"}}>
             {description}
           </Text>
         </Box>
@@ -185,7 +186,6 @@ const Hero = () => {
   
       </VStack>
     </Flex>
-
     </>
   );
 };

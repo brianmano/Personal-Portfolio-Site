@@ -4,10 +4,10 @@ import { MdOutlineArrowOutward, MdOutlineArrowCircleUp } from "react-icons/md";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, Facode, FaHeart, FaReact } from 'react-icons/fa';
 
 /* change the following to customize the page*/
-const emaiLink = "mailto:kothandv@mcmaster.ca"
-const email = "kothandv@mcmaster.ca"
-const linkedin = "https://www.linkedin.com/in/varun-ram/"
-const github = "https://github.com/Nuravar"
+const emaiLink = "mailto:brian.manomaisupat@gmail.com"
+const email = "brian.manomaisupat@gmail.com"
+const linkedin = "https://www.linkedin.com/in/brian-mano/"
+const github = "https://github.com/brianmano"
 /*-------------------------------------------*/
 
 
@@ -58,8 +58,6 @@ const Contact = () => {
  
 </Flex>
       
-
-
             <HStack width="100%" spacing={4} justify='left' flexWrap="wrap">
                 <Link href={emaiLink} isExternal>
                   <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
@@ -67,7 +65,7 @@ const Contact = () => {
                   </Button>
                 </Link>
                 <Button leftIcon={<FaPhone />} colorScheme='orange' variant='outline'>
-                    647-761-7753
+                    289-788-9659
                 </Button>
                 <Link href={linkedin} isExternal>
                   <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline' >

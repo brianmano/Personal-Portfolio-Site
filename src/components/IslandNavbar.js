@@ -32,12 +32,19 @@ const IslandNavbar = () => {
         fontSize="15px" 
         variant="link"
         onClick={scrollToTop}
+        color = "#0F0D15"
         >
-            ṇ
+          Brian Manomaisupat
         </Box>
         <div>
-            <Link href = "https://www.facebook.com/marketplace/item/708959441330993/?ref=browse_tab&referral_code=marketplace_top_picks&referral_story_type=top_picks" isExternal>
-                <Button variant="link" >Resume</Button>
+            <Link href = "https://drive.google.com/file/d/1G837Cw9yMQ7vGNIyto_jRXR885sHbwt_/view?usp=sharing" isExternal>
+                <Button 
+                variant="link"
+                color = "#0F0D15" 
+                >
+                Resume
+                </Button>
+                
             </Link>
             <Button
                 variant="link"
@@ -52,6 +59,7 @@ const IslandNavbar = () => {
                     });
                 }
                 }}
+                color = "#0F0D15"
             >
                 Experience
             </Button>
@@ -68,6 +76,7 @@ const IslandNavbar = () => {
                     });
                 }
                 }}
+                color = "#0F0D15"
             >
             Projects
           </Button>
@@ -85,6 +94,7 @@ const IslandNavbar = () => {
                 });
               }
             }}
+            color = "#0F0D15"
           >
             Contact
           </Button>

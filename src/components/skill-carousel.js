@@ -82,20 +82,21 @@ export default class Skills extends Component {
     };
 
     return (
-        
-        <Box width="100%" paddingX={10}>
-        <Slider {...sliderSettings}>
-          {doubleArray.map((item, index) => (
-            <div key={index}>
-              <Tag size="m" variant="outline" colorScheme="">
-                <TagLeftIcon as={item[0]} />
-                <TagLabel>{item[1]}</TagLabel>
-              </Tag>
-            </div>
-          ))}
-        </Slider>
-        <Divider width="100%" borderColor="gray.400" />
-      </Box>
+
+        <Box width="100%" paddingX={10} color = 'white' >
+          <Slider {...sliderSettings}>
+            {doubleArray.map((item, index) => (
+              <div key={index}>
+                <Tag size="m" variant="outline" colorScheme="white">
+                  <TagLeftIcon as={item[0]} />
+                  <TagLabel>{item[1]}</TagLabel>
+                </Tag>
+              </div>
+            ))}
+          </Slider>
+          <Divider width="100%" borderColor="gray.400" />
+        </Box>
+
     );
   }
 }

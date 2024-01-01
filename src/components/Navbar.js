@@ -55,7 +55,7 @@ const Navbar = () => {
             ☰
           </MenuButton>
           <MenuList>
-            <Link href = "https://www.facebook.com/marketplace/item/708959441330993/?ref=browse_tab&referral_code=marketplace_top_picks&referral_story_type=top_picks" isExternal>
+            <Link href = "https://drive.google.com/file/d/1G837Cw9yMQ7vGNIyto_jRXR885sHbwt_/view?usp=sharing" isExternal>
               <MenuItem variant="link">Resume</MenuItem>
             </Link>
             <MenuItem 

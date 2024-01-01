@@ -9,6 +9,7 @@ import GithubCard from './Github-Card'
 import ExtendedProjects from './Extended_Projects';
 
 /* change the following to customize the page*/
+const fontcolour2 = "#D3D3D3"
 
 const project1_image= "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=2011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 const project2_image= "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -36,10 +37,13 @@ const projects = [
 
 const repoNames = [
   {
-    name: 'albertlai431/slacker-chore'
+    name: 'Brian-Varun/Personal-Portfolio'
   },
   {
-    name: 'PacePlusPlus/PacePlusPlus'
+    name: 'brianmano/Pacemaker_Project'
+  },
+  {
+    name: 'brianmano/Electromagnet_System_Project_Code'
   },
 ];
 
@@ -67,107 +71,23 @@ const Projects = () => {
     };
   
   
-    
     return (
       <Flex justify="flex-start" width="100%" padding={{ base: '10', sm: '10' }} paddingBottom={0}>
         <VStack align="flex-start" spacing="5" width="100%">
           
-          <Heading paddingX={0} id="projects">
+          <Heading color={fontcolour2} paddingX={0} id="projects">
             Projects
           </Heading>
 
-          
 
-          <Text fontWeight="bold" paddingX={0}>Click the Arrows to See More</Text>
+          <Text color={fontcolour2} fontWeight="bold" paddingX={0}>Click the Arrows to See More</Text>
 
 
         <ExtendedProjects  />
 
-{/* 
-          {projects.map((project, index) => (
-            <Box 
-            width="100%" 
-            height="auto" 
-            as = 'button'
-            onClick={(event) => handleButtonClick(event, project)}
-            variant="unstyled" 
-            >
-              <Card
-                height={{ base: '100%', sm: '200px' }}
-                width="100%"
-                direction={{ base: 'column', sm: 'row' }}
-                overflow="hidden"
-                variant="outline"
-                maxW={{ base: '100%', sm: '100%' }}
-                _hover={{ 
-                    transform: 'scale(1.01)'
-                    }}
-              >
-                <Image
-                  objectFit="cover"
-                  width={{ base: '100%', md: '80%' }}
-                  minWidth="40%"
-                  height="250px"
-                  src={project.image}
-                  alt="Project Card"
-                />
-                <Stack width="auto">
-                  <CardBody  width="auto">
-                      <Heading>{project.name}</Heading>
-                        <Box  whiteSpace="normal">
-                        <Text   maxWidth="100%" py="2">{project.description}</Text>
-                        </Box>           
-                    <Flex justifyContent="flex-end">
-                    {project.tags.map((tag, tagIndex) => (
-                      <Tag
-                        key={tagIndex}
-                        bottom="20px"
-                        right={`${175 - tagIndex * 75}px`}
-                        variant="subtle"
-                        colorScheme="gray"
-                        mr="2" 
-                        mt={{ base: "2", sm: '8' }}
-                      >
-                        <TagLabel>{tag}</TagLabel>
-                      </Tag>
-                    ))}
-                    </Flex>
-                  </CardBody>
-                </Stack>
-              </Card>
-            </Box>
-          ))}
-  
-        {isSlideExVisible && selectedProject && (
-                <>
-                    {selectedProject.name === 'Heatsink Project' && (
-                    <SlideEx1
-                        isOpen={isSlideExVisible}
-                        project={selectedProject}
-                        onClose={handleCloseSlideEx}
-                    />
-                    )}
-                    {selectedProject.name === 'Slacker Chores' && (
-                    <SlideEx2
-                        isOpen={isSlideExVisible}
-                        project={selectedProject}
-                        onClose={handleCloseSlideEx}
-                    />
-                    )}
-                    {selectedProject.name === 'Pace++' && (
-                    <SlideEx3
-                        isOpen={isSlideExVisible}
-                        project={selectedProject}
-                        onClose={handleCloseSlideEx}
-                    />
-                    )}
-                </>
-                )}
-            <Button fontWeight="bold" variant="link" rightIcon={<BsArrowUpRightSquare />}
-            >
-                Explore More Projects
-            </Button> */}
-          <Text pt="5"fontWeight="bold" paddingX={0}>Github Projects</Text>
+        <Heading color={fontcolour2} width="100%" paddingTop={10} id="experience">
+            GitHub Projects       
+        </Heading>
           <VStack spacing={4} align="center" p={4} w = '100%'>
             <Grid
               templateColumns={`repeat(${columns}, 1fr)`}
