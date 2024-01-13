@@ -8,13 +8,13 @@ import Skills from "./components/skill-carousel";
 import IslandNavbar from "./components/IslandNavbar";
 function App() {
   return (
-    <Box width={{ base: "100%"}} bgGradient="linear(to-t, white, #4B4858, #4B4858, #4B4858, #0F0D15, #0F0D15)" style={{ margin: 0 }} >
+    <Box width={{ base: "100%"}} style={{ margin: 0 }} >
       <VStack spacing={0} p={0} maxW="100%" align="center">
         <IslandNavbar  />
         <Hero />
-        <Experiences />
-        <Projects />
-        <Contact />
+        {/* <Experiences /> */}
+        {/* <Projects /> */}
+        {/* <Contact /> */}
       </VStack>
     </Box>
 
