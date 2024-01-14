@@ -10,10 +10,12 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Link
+  Link,
+  Image
 } from '@chakra-ui/react';
 
 import { experienceID } from '../componentsold/Experience';
+import logo from './images/logo.png';
 
 
 const Navbar = () => {
@@ -45,7 +47,12 @@ const Navbar = () => {
         paddingX="9"
         href="/"
       >
-        PP
+        <Image 
+        src={logo} 
+        alt="Logo"
+        objectFit="cover"
+        height="50px"
+        ></Image>
       </Box>
 
       {mobileNav ? (
