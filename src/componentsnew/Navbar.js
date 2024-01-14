@@ -34,7 +34,7 @@ const Navbar = () => {
       width="100%"
       padding="2"
       position="fixed"
-      bg="white"
+      // bg="white"
       zIndex={9}
     >
       <Box 
@@ -55,9 +55,9 @@ const Navbar = () => {
             ☰
           </MenuButton>
           <MenuList>
-            <Link href = "https://drive.google.com/file/d/1G837Cw9yMQ7vGNIyto_jRXR885sHbwt_/view?usp=sharing" isExternal>
-              <MenuItem variant="link">Resume</MenuItem>
-            </Link>
+            {/* <Link href = "" isExternal>
+              <MenuItem variant="link">Receipts</MenuItem>
+            </Link> */}
             <MenuItem 
                 onClick={() => {
                     const experienceSection = document.getElementById('experience');
@@ -69,7 +69,7 @@ const Navbar = () => {
                       });
                     }
                   }}variant="link">
-                Experience
+                Notifications
             </MenuItem>
             <MenuItem 
                 onClick={() => {
@@ -82,29 +82,14 @@ const Navbar = () => {
                     });
                   }
                 }}variant="link">
-              Projects
-            </MenuItem>
-            <MenuItem 
-                onClick={() => {
-                  const experienceSection = document.getElementById('contact');
-
-                  if (experienceSection) {
-                    experienceSection.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                    });
-                  }
-                }}variant="link">
-              Contact
+              Pantry
             </MenuItem>
           </MenuList>
         </Menu>
       ) : (
         <HStack spacing="20" flexWrap="wrap">
-          <Spacer />
-          <Link href = "https://www.facebook.com/marketplace/item/708959441330993/?ref=browse_tab&referral_code=marketplace_top_picks&referral_story_type=top_picks" isExternal>
-          <Button variant="link" >Resume</Button>
-          </Link>
+          {/* <Spacer /> */}
+          {/* <Button variant="link" >Receipts</Button> */}
           <Button
             variant="link"
             onClick={() => {
@@ -118,7 +103,7 @@ const Navbar = () => {
               }
             }}
           >
-            Experience
+            Notifications
           </Button>
           <Button
             variant="link"
@@ -133,22 +118,7 @@ const Navbar = () => {
               }
             }}
           >
-            Projects
-          </Button>
-          <Button
-            variant="link"
-            onClick={() => {
-              const experienceSection = document.getElementById('contact');
-
-              if (experienceSection) {
-                experienceSection.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                });
-              }
-            }}
-          >
-            Contact
+            Pantry
           </Button>
         </HStack>
       )}
