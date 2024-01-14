@@ -1,7 +1,6 @@
-# Personal Portfolio Template
-The following is a personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects. Site URL / Demo: []()
+# PantryPal
+The following is a personal pantry cloud tracker template hosted with GitHub Pages, built for DeltaHacksX! 
 
-Our website design was loosely based off the following portfolio by Jarvis Wang: [https://www.jarvis-wang.com/](https://www.jarvis-wang.com/)
 ## Technology Stack
 HTML | CSS | [React.js](https://react.dev/) | [Chakra-UI](https://chakra-ui.com/) | [Framer Motion](https://www.framer.com/motion/) | [React-Slick](https://react-slick.neostack.com/)
 
