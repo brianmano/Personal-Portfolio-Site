@@ -10,10 +10,12 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Link
+  Link,
+  Image
 } from '@chakra-ui/react';
 
 import { experienceID } from '../componentsold/Experience';
+import logo from './images/logo.png';
 
 
 const Navbar = () => {
@@ -45,7 +47,12 @@ const Navbar = () => {
         paddingX="9"
         href="/"
       >
-        PP
+        <Image 
+        src={logo} 
+        alt="Logo"
+        objectFit="cover"
+        height="50px"
+        ></Image>
       </Box>
 
       {mobileNav ? (
@@ -89,13 +96,13 @@ const Navbar = () => {
         <HStack spacing="20" flexWrap="wrap" margin={5}>
           {/* <Spacer /> */}
           {/* <Button variant="link" >Receipts</Button> */}
-          <Button
+          {/* <Button
             variant="link"
             as="a"
             href="/grocerylist"
           >
             Grocery List
-          </Button>
+          </Button> */}
           <Button
             variant="link"
             as="a"
@@ -103,13 +110,13 @@ const Navbar = () => {
           >
             Pantry
           </Button>
-          <Button
+          {/* <Button
             variant="link"
             as="a"
             href="/notifications"
           >
             Notifications
-          </Button>
+          </Button> */}
         </HStack>
       )}
     </Flex>
