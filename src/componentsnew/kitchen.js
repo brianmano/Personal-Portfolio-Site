@@ -13,6 +13,9 @@ import {
   Th,
   Td,
   Input,
+  Box,
+  HStack,
+  Divider
 } from '@chakra-ui/react';
 import LocalStorage from 'localstorage-enhance';
 import receipt_list from './receipt_list_test';
@@ -31,11 +34,10 @@ const Kitchen = () => {
   const handleSetButtonClick = () => {
     // Set data into local storage
     setLocalStorageData();
-  
+
     // Update the displayed data in state
     handleGetButtonClick();
   };
-  
 
   const handleGetButtonClick = () => {
     // Get data from local storage and set it in the component's state
@@ -48,6 +50,8 @@ const Kitchen = () => {
     LocalStorage.clearAll();
     // Clear displayed data in state
     setDisplayedData(null);
+    // Clear selected item
+    setSelectedItem(null);
   };
 
   const setLocalStorageData = () => {
@@ -83,7 +87,7 @@ const Kitchen = () => {
       // Parse and return the important information
       const { receiptList } = storedData;
       return {
-        receiptList, // Format the date for better readability
+        receiptList,
       };
     } else {
       return null;
@@ -99,48 +103,61 @@ const Kitchen = () => {
     if (!displayedData) {
       return null;
     }
-
-    // Create a summary object to store quantities for each unique item
+  
+    // Create a summary object to store quantities and the newest date for each unique item
     const summary = {};
-
+  
     // Populate the summary object
     displayedData.receiptList.forEach((item) => {
       const itemName = item[0];
       const itemQuantity = item[1];
-
+      const itemDate = item[3]; // Assuming the date is at index 3, adjust if needed
+  
       if (summary[itemName]) {
-        summary[itemName] += itemQuantity;
+        // If the item exists in the summary, update the quantity and date if it's newer
+        summary[itemName].quantity += itemQuantity;
+        summary[itemName].newestDate = Math.max(summary[itemName].newestDate, itemDate);
       } else {
-        summary[itemName] = itemQuantity;
+        // If the item is not in the summary, add it with quantity and date
+        summary[itemName] = {
+          quantity: itemQuantity,
+          newestDate: itemDate,
+        };
       }
     });
-
+  
     // Convert the summary object into an array for rendering
     const summaryArray = Object.entries(summary);
-
+  
     return (
-      <VStack align="flex-start" spacing="2">
-        <Text>Summary Table:</Text>
-        <Table size="sm">
+      <VStack align="flex-start" spacing="2" width={{ base: '100%', md: '100%' }}>
+        <Table size="lg">
           <Thead>
             <Tr>
-              <Th>Item</Th>
-              <Th>Quantity</Th>
+              <Th px={2}>Item</Th>
+              <Th px={4}>Quantity</Th>
+              <Th px={4}>Newest Date</Th> {/* Add a new column for the newest date */}
             </Tr>
           </Thead>
           <Tbody>
-            {summaryArray.map(([itemName, itemQuantity], index) => (
-              <Tr key={index} onClick={() => handleSummaryItemClick(itemName)} style={{ cursor: 'pointer' }}>
-                <Td>{itemName}</Td>
-                <Td>{itemQuantity}</Td>
+            {summaryArray.map(([itemName, itemInfo], index) => (
+              <Tr
+                key={index}
+                onClick={() => handleSummaryItemClick(itemName)}
+                style={{ cursor: 'pointer', backgroundColor: selectedItem === itemName ? '#edf2f7' : 'inherit' }}
+              >
+                <Td px={4}>{itemInfo.quantity}</Td>
+                <Td px={4}>{itemName}</Td>
+                <Td px={4}>{itemInfo.newestDate}</Td>
               </Tr>
             ))}
           </Tbody>
         </Table>
+
       </VStack>
     );
   };
-
+  
   const generateDetailedTable = () => {
     if (!displayedData || !selectedItem) {
       return null;
@@ -193,8 +210,11 @@ const Kitchen = () => {
     };
 
     return (
-      <VStack align="flex-start" spacing="2">
-        <Text>Detailed List for {selectedItem}:</Text>
+      <Box bg="gray.200" p={4} borderRadius="md" borderWidth="1px" borderColor="black">
+      <VStack align="flex-start" spacing="1" mt={2}>
+        <Heading width="100%" id="experience">
+          Item Info: {selectedItem}
+        </Heading>
         <Table size="sm">
           <Thead>
             <Tr>
@@ -220,10 +240,10 @@ const Kitchen = () => {
                 <Td>{item[2]}</Td>
                 <Td>{item[3]}</Td>
                 <Td>
-                  <Button onClick={() => handleQuantityChange(index, item[1] + 1)}>+</Button>
-                  <Button onClick={() => handleQuantityChange(index, Math.max(item[1] - 1, 0))}>-</Button>
+                  <Button size="sm" onClick={() => handleQuantityChange(index, item[1] + 1)}>+</Button>
+                  <Button size="sm" onClick={() => handleQuantityChange(index, Math.max(item[1] - 1, 0))}>-</Button>
                   {/* Delete button */}
-                  <Button onClick={() => handleDeleteClick(index)} colorScheme="red">
+                  <Button size="sm" onClick={() => handleDeleteClick(index)} colorScheme="red">
                     Delete
                   </Button>
                 </Td>
@@ -238,39 +258,48 @@ const Kitchen = () => {
           </Button>
         </Flex>
       </VStack>
+    </Box>
     );
   };
 
   return (
     <>
-      <Flex justify="flex-start" width="100%" paddingX="10" paddingY="20" flexDirection={{ base: 'column', md: 'row' }}>
-        <VStack align="flex-start" spacing="3" flexWrap="wrap">
-          <Heading width="100%" paddingTop={10} id="experience">
-            Family Pantry
+    <Flex justify="flex-start" width="100%" paddingX="10" paddingY="10" flexDirection={{ base: 'column', md: 'row' }}>
+    <VStack align="flex-start" spacing="2" flexWrap="wrap" width={{ base: '100%', md: '50%' }}>
+      <Heading width="100%" paddingTop={10} id="experience">
+        Family Pantry
+      </Heading>
+      <Box mb={4}>
+        <Button onClick={handleSetButtonClick} colorScheme="blue" mb={6}>
+          Set Items from receipt_list
+        </Button>
+
+        {/* Button to trigger clearing all items in local storage */}
+        <Button onClick={handleClearButtonClick} colorScheme="red" mb={6}>
+          Clear All Items in Local Storage
+        </Button>
+      </Box>    
+    </VStack>
+  </Flex>
+
+  <Flex justify="flex-start" width="100%" paddingX="10"  flexDirection={{ base: 'column', md: 'row' }}>
+      <HStack width="100%">
+        <VStack align="flex-start" spacing="2" width="700px">
+        <Heading size="lg" textAlign="left"  >
+            Pantry Items
           </Heading>
-          {/* Button to trigger setting items in local storage */}
-          <Button onClick={handleSetButtonClick} colorScheme="blue">
-            Set Items from receipt_list
-          </Button>
-
-          {/* Button to trigger clearing all items in local storage */}
-          <Button onClick={handleClearButtonClick} colorScheme="red">
-            Clear All Items in Local Storage
-          </Button>
-
-          <Heading size="md">Retrieved Items</Heading>
-
-          {/* Display summary information in a separate table */}
+          <Divider my={2} borderColor="black"  />
           {generateSummaryTable()}
-          {/* Display retrieved information in a table */}
-          {displayedData && (
-            <VStack align="flex-start" spacing="2">
-              {generateDetailedTable()}
-            </VStack>
-          )}
         </VStack>
-      </Flex>
-    </>
+        {displayedData && selectedItem && (
+          <VStack align="flex-start" spacing="2" width="50%">
+            {generateDetailedTable()}
+          </VStack>
+        )}
+      </HStack>   
+  </Flex>
+
+</>
   );
 };
 
