@@ -86,7 +86,7 @@ const Navbar = () => {
           </MenuList>
         </Menu>
       ) : (
-        <HStack spacing="20" flexWrap="wrap">
+        <HStack spacing="20" flexWrap="wrap" margin={5}>
           {/* <Spacer /> */}
           {/* <Button variant="link" >Receipts</Button> */}
           <Button
@@ -99,16 +99,16 @@ const Navbar = () => {
           <Button
             variant="link"
             as="a"
-            href="/notifications"
+            href="/pantry"
           >
-            Notifications
+            Pantry
           </Button>
           <Button
             variant="link"
             as="a"
-            href="/pantry"
+            href="/notifications"
           >
-            Pantry
+            Notifications
           </Button>
         </HStack>
       )}
