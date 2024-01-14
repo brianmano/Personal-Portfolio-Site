@@ -96,13 +96,13 @@ const Navbar = () => {
         <HStack spacing="20" flexWrap="wrap" margin={5}>
           {/* <Spacer /> */}
           {/* <Button variant="link" >Receipts</Button> */}
-          <Button
+          {/* <Button
             variant="link"
             as="a"
             href="/grocerylist"
           >
             Grocery List
-          </Button>
+          </Button> */}
           <Button
             variant="link"
             as="a"

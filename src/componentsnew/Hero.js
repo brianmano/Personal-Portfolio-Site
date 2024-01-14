@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { createContext, useContext, Flex, Link , Image, useToast, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, IconButton, useBreakpointValue, Center, Stack, useDisclosure } from '@chakra-ui/react';
+import React, { useState, useEffect, useContext } from 'react';
+import { createContext, Flex, Link , Image, useToast, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, IconButton, useBreakpointValue, Center, Stack, useDisclosure } from '@chakra-ui/react';
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact, FaUpload } from 'react-icons/fa';
 import pantryPalImg from './images/pantrypal.png';
 import "./Hero.css"
+import LocalStorage from 'localstorage-enhance';
 import UserContext from './UserContext';
 import {
   Modal,
@@ -12,8 +13,13 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  Input,
+  InputGroup,
+  InputLeftAddon,
 } from '@chakra-ui/react'
 import Navbar from './Navbar';
+import PantryContext from './PantryContext';
+import Pantry from './Pantry';
 
 const Hero = () => {
 
@@ -21,14 +27,34 @@ const Hero = () => {
 
   const [showUsers, setShowUsers] = useState(true);
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [image, setImage] = useState('');
-  function handleImage(e) {
-    console.log(e.target.files)
-    setImage(e.target.files[0])
-  }
-
-
+  // const [image, setImage] = useState('');
+  // function handleImage(e) {
+  //   console.log(e.target.files)
+  //   setImage(e.target.files[0])
+  // }
   const [currentUser, setCurrentUser] = useState();
+  const [newPantryList, setNewPantryList] = useState([]);
+  const [ingredient, setIngredient] = React.useState('')
+  const [quantity, setQuantity] = React.useState('');
+  const handleIngredientChange = (event) => setIngredient(event.target.value)
+  const handleQuantityChange = (event) => setQuantity(event.target.value)
+  const currentDate = new Date();
+
+  // Get individual date components
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1; // Months are zero-indexed
+  const day = currentDate.getDate();
+
+  // Format the date as a string
+  const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+
+  const pantryList = useContext(PantryContext);
+  const handleAddClick = () => {
+    setNewPantryList((prevPantryList) => [
+      ...(Array.isArray(prevPantryList) ? prevPantryList : []), [ingredient, quantity, currentUser, formattedDate]
+    ]);
+    console.log(newPantryList);
+  };
 
 
   return ( 
@@ -74,23 +100,31 @@ const Hero = () => {
         </HStack>
         }
 
-        {/* <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Scan a receipt</ModalHeader>
+            <ModalHeader>Add ingredients</ModalHeader>
             <ModalCloseButton />
             <ModalBody align="center" justify="center">
-              <input type="file" name='file' onChange={handleImage}/>
+            <InputGroup>
+              <InputLeftAddon>
+              <Input placeholder='Ingredient' onChange={handleIngredientChange}/>
+              </InputLeftAddon>
+              <Input placeholder='Quantity' onChange={handleQuantityChange}/>
+            </InputGroup>
             </ModalBody>
 
             <ModalFooter>
               <Button colorScheme='red' mr={3} onClick={onClose}>
-                Cancel
+                Close
               </Button>
-              <Button colorScheme='blue'>Submit</Button>
+              <Button colorScheme='blue' onClick={handleAddClick}>Add</Button>
+              <Text>
+                {(newPantryList)}
+              </Text>
             </ModalFooter>
           </ModalContent>
-        </Modal> */}
+        </Modal>
   
       </VStack>
     </Flex>
@@ -98,6 +132,11 @@ const Hero = () => {
     <UserContext.Provider value={currentUser}>
       <Navbar/>
     </UserContext.Provider>
+
+    <PantryContext.Provider value={newPantryList}>
+      {/* <Hero/> */}
+      <Pantry/>
+    </PantryContext.Provider>
     </>
   );
 };
