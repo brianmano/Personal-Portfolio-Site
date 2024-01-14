@@ -7,6 +7,7 @@ import user_test from './user_test';
 const Kitchen = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const [displayedData, setDisplayedData] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const handleSetButtonClick = () => {
     // Set data into local storage
@@ -24,18 +25,27 @@ const Kitchen = () => {
     LocalStorage.clearAll();
     // Clear displayed data in state
     setDisplayedData(null);
+    // Clear selected item
+    setSelectedItem(null);
   };
 
   const setLocalStorageData = () => {
-    // Combine receipt_list, user_test, and date into a single object
-    const dataToStore = {
+    const newData = {
       receiptList: receipt_list,
       user: user_test,
       date: new Date().toISOString(),
     };
 
-    // Set the combined data into local storage
-    LocalStorage.setItem({ key: 'myData', data: dataToStore });
+    // Get existing data from local storage
+    const existingData = LocalStorage.getItem('myData') || { receiptList: [], user: null, date: null };
+
+    // Append the new data to the existing data
+    existingData.receiptList = existingData.receiptList.concat(newData.receiptList);
+    existingData.user = newData.user;
+    existingData.date = newData.date;
+
+    // Set the combined data back into local storage
+    LocalStorage.setItem({ key: 'myData', data: existingData });
   };
 
   const getLocalStorageData = () => {
@@ -55,6 +65,92 @@ const Kitchen = () => {
     }
   };
 
+  const generateSummaryTable = () => {
+    if (!displayedData) {
+      return null;
+    }
+
+    // Create a summary object to store quantities for each unique item
+    const summary = {};
+
+    // Populate the summary object
+    displayedData.receiptList.forEach((item) => {
+      const itemName = item[0];
+      const itemQuantity = item[1];
+
+      if (summary[itemName]) {
+        summary[itemName] += itemQuantity;
+      } else {
+        summary[itemName] = itemQuantity;
+      }
+    });
+
+    // Convert the summary object into an array for rendering
+    const summaryArray = Object.entries(summary);
+
+    return (
+      <VStack align="flex-start" spacing="2">
+        <Text>Summary Table:</Text>
+        <Table size="sm">
+          <Thead>
+            <Tr>
+              <Th>Item</Th>
+              <Th>Quantity</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {summaryArray.map(([itemName, itemQuantity], index) => (
+              <Tr key={index} onClick={() => handleSummaryItemClick(itemName)}>
+                <Td>{itemName}</Td>
+                <Td>{itemQuantity}</Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </VStack>
+    );
+  };
+
+  const handleSummaryItemClick = (itemName) => {
+    // Set the selected item for filtering the detailed list
+    setSelectedItem(itemName);
+  };
+
+  const generateDetailedTable = () => {
+    if (!displayedData) {
+      return null;
+    }
+
+    // Filter the detailed list based on the selected item
+    const filteredList = displayedData.receiptList.filter((item) => item[0] === selectedItem);
+
+    return (
+      <VStack align="flex-start" spacing="2">
+        <Text>Detailed Table:</Text>
+        <Table size="sm">
+          <Thead>
+            <Tr>
+              <Th>Item</Th>
+              <Th>Quantity</Th>
+              <Th>User</Th>
+              <Th>Date</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {filteredList.map((item, index) => (
+              <Tr key={index}>
+                <Td>{item[0]}</Td>
+                <Td>{item[1]}</Td>
+                <Td>{displayedData.user}</Td>
+                <Td>{displayedData.date}</Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </VStack>
+    );
+  };
+
   return (
     <>
       <Flex justify="flex-start" width="100%" paddingX="10" paddingY="20" flexDirection={{ base: 'column', md: 'row' }}>
@@ -66,43 +162,24 @@ const Kitchen = () => {
           <Button onClick={handleSetButtonClick} colorScheme="blue">
             Set Items from receipt_list
           </Button>
-  
+
           {/* Button to trigger retrieving all items from local storage */}
           <Button onClick={handleGetButtonClick} colorScheme="teal">
             Get All Items from Local Storage
           </Button>
-  
+
           {/* Button to trigger clearing all items in local storage */}
           <Button onClick={handleClearButtonClick} colorScheme="red">
             Clear All Items in Local Storage
           </Button>
-  
+
           <Heading size="md">Retrieved Items</Heading>
-  
+
+          {/* Display summary information in a separate table */}
+          {generateSummaryTable()}
+
           {/* Display retrieved information in a table */}
-          {displayedData && (
-            <VStack align="flex-start" spacing="2">
-              <Text>Receipt List:</Text>
-              <Table size="sm">
-                <Thead>
-                  <Tr>
-                    <Th>Item</Th>
-                    <Th>Quantity</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  {displayedData.receiptList.map((item, index) => (
-                    <Tr key={index}>
-                      <Td>{item[0]}</Td>
-                      <Td>{item[1]}</Td>
-                    </Tr>
-                  ))}
-                </Tbody>
-              </Table>
-              <Text>User: {displayedData.user}</Text>
-              <Text>Date: {displayedData.date}</Text>
-            </VStack>
-          )}
+          {generateDetailedTable()}
         </VStack>
       </Flex>
     </>
