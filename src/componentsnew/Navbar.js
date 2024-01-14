@@ -110,13 +110,13 @@ const Navbar = () => {
           >
             Pantry
           </Button>
-          <Button
+          {/* <Button
             variant="link"
             as="a"
             href="/notifications"
           >
             Notifications
-          </Button>
+          </Button> */}
         </HStack>
       )}
     </Flex>
