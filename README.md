@@ -5,23 +5,6 @@ Our website design was loosely based off the following portfolio by Jarvis Wang:
 ## Technology Stack
 HTML | CSS | [React.js](https://react.dev/) | [Chakra-UI](https://chakra-ui.com/) | [Framer Motion](https://www.framer.com/motion/) | [React-Slick](https://react-slick.neostack.com/)
 
-## Structure
-- Navigation Bar (2 versions) and Resume
-- Hero Section
-    - Name
-    - Degree/Profession
-    - Location
-    - Email, Linkedin, and Github
-- About Me
-    - Now Inspired by [Derek Sivers](https://sive.rs/now)
-    - Resume
-- Experience
-    - Carousel with position, company name, company department, and date
-- Projects
-    - 3 standout projects, alongside with a carousel to see others
-    - Selected Github repositories 
-- Contact Me page
-
 ## Sharing
 Project is open source. Feel free to make your own version.
 
@@ -72,7 +55,4 @@ You should have [Node.js](https://nodejs.org/en) and [Git](https://git-scm.com/)
    ```
 
 
-## Contributors
-[Brian Manomaisupat](https://www.linkedin.com/in/brian-mano/)
-[Varun Kothandaraman](https://www.linkedin.com/in/varun-ram/)
 
