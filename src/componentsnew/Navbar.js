@@ -40,12 +40,12 @@ const Navbar = () => {
       <Box 
         as="a"  
         fontWeight="bold" 
-        fontSize="20px" 
+        fontSize="26px" 
         paddingY="3" 
         paddingX="9"
         href="/"
       >
-        ṇ
+        PP
       </Box>
 
       {mobileNav ? (
