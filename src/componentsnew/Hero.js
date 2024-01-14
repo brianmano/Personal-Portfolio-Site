@@ -24,7 +24,7 @@ import Pantry from './Pantry';
 const Hero = () => {
 
   const isMobile = useBreakpointValue({ base: true, md: false });
-
+  const [displayedData, setDisplayedData] = useState(null);
   const [showUsers, setShowUsers] = useState(true);
   const { isOpen, onOpen, onClose } = useDisclosure()
   // const [image, setImage] = useState('');
@@ -37,8 +37,9 @@ const Hero = () => {
   const [ingredient, setIngredient] = React.useState('')
   const [quantity, setQuantity] = React.useState('');
   const handleIngredientChange = (event) => setIngredient(event.target.value)
-  const handleQuantityChange = (event) => setQuantity(event.target.value)
+  const handleQuantityChange = (event) => setQuantity(parseInt(event.target.value))
   const currentDate = new Date();
+  const pantryListContext = useContext(PantryContext);
 
   // Get individual date components
   const year = currentDate.getFullYear();
@@ -54,6 +55,37 @@ const Hero = () => {
       ...(Array.isArray(prevPantryList) ? prevPantryList : []), [ingredient, quantity, currentUser, formattedDate]
     ]);
     console.log(newPantryList);
+  };
+
+  const setLocalStorageData = () => {
+    // Fetch existing data from local storage
+    const existingData = LocalStorage.getItem('myData') || { newPantryList: [] };
+
+    // Identify deleted items by checking if they exist in the displayedData
+    const deletedItems = displayedData
+      ? existingData.newPantryList.filter(
+          (item) => !displayedData.newPantryList.some((displayedItem) => displayedItem[0] === item[0])
+        )
+      : [];
+
+    // Remove deleted items from the existing receiptList
+    const updatedReceiptList = existingData.newPantryList.filter(
+      (item) => !deletedItems.some((deletedItem) => deletedItem[0] === item[0])
+    );
+
+    // Combine updated receipt_list from context, user_test, and date into a single object
+    const newDataToStore = {
+      newPantryList: [...updatedReceiptList, ...pantryListContext, [ingredient, quantity, currentUser, formattedDate]],
+    };
+
+    // Set the combined data into local storage
+    LocalStorage.setItem({ key: 'myData', data: newDataToStore });
+  };
+
+  const handleSetButtonClick = () => {
+    // Set data into local storage
+    setLocalStorageData();
+
   };
 
 
@@ -118,7 +150,7 @@ const Hero = () => {
               <Button colorScheme='red' mr={3} onClick={onClose}>
                 Close
               </Button>
-              <Button colorScheme='blue' onClick={handleAddClick}>Add</Button>
+              <Button colorScheme='blue' onClick={handleSetButtonClick}>Add</Button>
               <Text>
                 {(newPantryList)}
               </Text>
@@ -132,11 +164,6 @@ const Hero = () => {
     <UserContext.Provider value={currentUser}>
       <Navbar/>
     </UserContext.Provider>
-
-    <PantryContext.Provider value={newPantryList}>
-      {/* <Hero/> */}
-      <Pantry/>
-    </PantryContext.Provider>
     </>
   );
 };

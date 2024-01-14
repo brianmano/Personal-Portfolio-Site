@@ -32,8 +32,6 @@ const Kitchen = () => {
   };
 
   const handleSetButtonClick = () => {
-    // Set data into local storage
-    setLocalStorageData();
 
     // Update the displayed data in state
     handleGetButtonClick();
@@ -56,23 +54,23 @@ const Kitchen = () => {
 
   const setLocalStorageData = () => {
     // Fetch existing data from local storage
-    const existingData = LocalStorage.getItem('myData') || { receiptList: [] };
+    const existingData = LocalStorage.getItem('myData') || { newPantryList: [] };
 
     // Identify deleted items by checking if they exist in the displayedData
     const deletedItems = displayedData
-      ? existingData.receiptList.filter(
-          (item) => !displayedData.receiptList.some((displayedItem) => displayedItem[0] === item[0])
+      ? existingData.newPantryList.filter(
+          (item) => !displayedData.newPantryList.some((displayedItem) => displayedItem[0] === item[0])
         )
       : [];
 
     // Remove deleted items from the existing receiptList
-    const updatedReceiptList = existingData.receiptList.filter(
+    const updatedReceiptList = existingData.newPantryList.filter(
       (item) => !deletedItems.some((deletedItem) => deletedItem[0] === item[0])
     );
 
     // Combine updated receipt_list, user_test, and date into a single object
     const newDataToStore = {
-      receiptList: [...updatedReceiptList, ...receipt_list],
+      newPantryList: [...updatedReceiptList, ...receipt_list],
     };
 
     // Set the combined data into local storage
@@ -85,9 +83,9 @@ const Kitchen = () => {
 
     if (storedData) {
       // Parse and return the important information
-      const { receiptList } = storedData;
+      const { newPantryList } = storedData;
       return {
-        receiptList,
+        newPantryList,
       };
     } else {
       return null;
@@ -108,7 +106,7 @@ const Kitchen = () => {
     const summary = {};
   
     // Populate the summary object
-    displayedData.receiptList.forEach((item) => {
+    displayedData.newPantryList.forEach((item) => {
       const itemName = item[0];
       const itemQuantity = item[1];
       const itemDate = item[3]; // Assuming the date is at index 3, adjust if needed
@@ -167,7 +165,7 @@ const Kitchen = () => {
     }
 
     // Filter detailed list based on the selected item
-    const filteredList = displayedData.receiptList.filter((item) => item[0] === selectedItem);
+    const filteredList = displayedData.newPantryList.filter((item) => item[0] === selectedItem);
 
     if (filteredList.length === 0) {
       // Return null if no items match the selected item
@@ -181,7 +179,7 @@ const Kitchen = () => {
 
       // Update the displayed data in state
       setDisplayedData({
-        receiptList: [...displayedData.receiptList],
+        newPantryList: [...displayedData.newPantryList],
       });
     };
 
@@ -195,15 +193,15 @@ const Kitchen = () => {
         const updatedData = { ...prevData };
 
         // Get the quantity of the item to be deleted
-        const deletedQuantity = updatedData.receiptList[index][1];
+        const deletedQuantity = updatedData.newPantryList[index][1];
 
         // Remove the item with the selected name and matching index from the receiptList array
-        updatedData.receiptList = updatedData.receiptList.filter(
+        updatedData.newPantryList = updatedData.newPantryList.filter(
           (item, i) => !(item[0] === selectedItem && i === index)
         );
 
         // If the quantity becomes zero, remove the entire line
-        updatedData.receiptList = updatedData.receiptList.filter((item) => item[1] !== 0);
+        updatedData.newPantryList = updatedData.newPantryList.filter((item) => item[1] !== 0);
 
         // Optional: You can perform any additional logic with the deleted quantity here
         console.log(`Deleted quantity: ${deletedQuantity}`);
@@ -270,18 +268,18 @@ const Kitchen = () => {
     <Flex justify="flex-start" width="100%" paddingX="10" paddingY="10" flexDirection={{ base: 'column', md: 'row' }}>
     <VStack align="flex-start" spacing="2" flexWrap="wrap" width={{ base: '100%', md: '50%' }}>
       <Heading width="100%" paddingTop={10} paddingBottom={5} id="experience">
-        Family Pantry
+        Pantry
       </Heading>
       <Box mb={4}>
         <Button onClick={handleSetButtonClick} colorScheme="gray" mb={6}>
-          ⊕ Upload Your Receipt List
+          ⊕ Load Your Pantry
         </Button>
         <Spacer />
   {/* Add a Spacer component to create space between buttons */}
   <Spacer />
         {/* Button to trigger clearing all items in local storage */}
         <Button onClick={handleClearButtonClick} colorScheme="red" mb={6}>
-          X Clear All Items in Family Pantry
+          X Clear All Items in Pantry
         </Button>
       </Box>    
     </VStack>
