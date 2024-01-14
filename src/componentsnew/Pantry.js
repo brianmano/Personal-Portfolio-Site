@@ -10,8 +10,8 @@ const Pantry = () => {
   return ( 
 
     <>
-    <Flex justify="center" width="100%" paddingX="10"paddingY= "20" flexDirection={{ base: 'column', md: 'row' }}>
-      <VStack align="center" justify="center" spacing="3" flexWrap="wrap">
+    <Flex width="100%" paddingX="10"paddingY= "20" flexDirection={{ base: 'column', md: 'row' }}>
+      <VStack spacing="3" flexWrap="wrap">
         <Heading>Pantry</Heading>
       </VStack>
     </Flex>
