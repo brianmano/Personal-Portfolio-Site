@@ -10,10 +10,12 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Link
+  Link,
+  Image
 } from '@chakra-ui/react';
 
 import { experienceID } from '../componentsold/Experience';
+import logo from './images/logo.png';
 
 
 const Navbar = () => {
@@ -34,19 +36,23 @@ const Navbar = () => {
       width="100%"
       padding="2"
       position="fixed"
-      bg="white"
+      // bg="white"
       zIndex={9}
     >
       <Box 
-        as="button"  
+        as="a"  
         fontWeight="bold" 
-        fontSize="20px" 
+        fontSize="26px" 
         paddingY="3" 
         paddingX="9"
-        variant="link"
-        onClick={scrollToTop}
+        href="/"
       >
-        ṇ
+        <Image 
+        src={logo} 
+        alt="Logo"
+        objectFit="cover"
+        height="50px"
+        ></Image>
       </Box>
 
       {mobileNav ? (
@@ -55,9 +61,9 @@ const Navbar = () => {
             ☰
           </MenuButton>
           <MenuList>
-            <Link href = "https://drive.google.com/file/d/1G837Cw9yMQ7vGNIyto_jRXR885sHbwt_/view?usp=sharing" isExternal>
-              <MenuItem variant="link">Resume</MenuItem>
-            </Link>
+            {/* <Link href = "" isExternal>
+              <MenuItem variant="link">Receipts</MenuItem>
+            </Link> */}
             <MenuItem 
                 onClick={() => {
                     const experienceSection = document.getElementById('experience');
@@ -69,7 +75,7 @@ const Navbar = () => {
                       });
                     }
                   }}variant="link">
-                Experience
+                Notifications
             </MenuItem>
             <MenuItem 
                 onClick={() => {
@@ -82,73 +88,34 @@ const Navbar = () => {
                     });
                   }
                 }}variant="link">
-              Projects
-            </MenuItem>
-            <MenuItem 
-                onClick={() => {
-                  const experienceSection = document.getElementById('contact');
-
-                  if (experienceSection) {
-                    experienceSection.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                    });
-                  }
-                }}variant="link">
-              Contact
+              Pantry
             </MenuItem>
           </MenuList>
         </Menu>
       ) : (
-        <HStack spacing="20" flexWrap="wrap">
-          <Spacer />
-          <Link href = "https://www.facebook.com/marketplace/item/708959441330993/?ref=browse_tab&referral_code=marketplace_top_picks&referral_story_type=top_picks" isExternal>
-          <Button variant="link" >Resume</Button>
-          </Link>
+        <HStack spacing="20" flexWrap="wrap" margin={5}>
+          {/* <Spacer /> */}
+          {/* <Button variant="link" >Receipts</Button> */}
           <Button
             variant="link"
-            onClick={() => {
-              const experienceSection = document.getElementById('experience');
-
-              if (experienceSection) {
-                experienceSection.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                });
-              }
-            }}
+            as="a"
+            href="/grocerylist"
           >
-            Experience
+            Grocery List
           </Button>
           <Button
             variant="link"
-            onClick={() => {
-              const experienceSection = document.getElementById('projects');
-
-              if (experienceSection) {
-                experienceSection.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                });
-              }
-            }}
+            as="a"
+            href="/pantry"
           >
-            Projects
+            Pantry
           </Button>
           <Button
             variant="link"
-            onClick={() => {
-              const experienceSection = document.getElementById('contact');
-
-              if (experienceSection) {
-                experienceSection.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                });
-              }
-            }}
+            as="a"
+            href="/notifications"
           >
-            Contact
+            Notifications
           </Button>
         </HStack>
       )}
