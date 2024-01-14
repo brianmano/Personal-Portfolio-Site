@@ -38,13 +38,12 @@ const Navbar = () => {
       zIndex={9}
     >
       <Box 
-        as="button"  
+        as="a"  
         fontWeight="bold" 
         fontSize="20px" 
         paddingY="3" 
         paddingX="9"
-        variant="link"
-        onClick={scrollToTop}
+        href="/"
       >
         ṇ
       </Box>
@@ -92,31 +91,22 @@ const Navbar = () => {
           {/* <Button variant="link" >Receipts</Button> */}
           <Button
             variant="link"
-            onClick={() => {
-              const experienceSection = document.getElementById('experience');
-
-              if (experienceSection) {
-                experienceSection.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                });
-              }
-            }}
+            as="a"
+            href="/grocerylist"
+          >
+            Grocery List
+          </Button>
+          <Button
+            variant="link"
+            as="a"
+            href="/notifications"
           >
             Notifications
           </Button>
           <Button
             variant="link"
-            onClick={() => {
-              const experienceSection = document.getElementById('projects');
-
-              if (experienceSection) {
-                experienceSection.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                });
-              }
-            }}
+            as="a"
+            href="/pantry"
           >
             Pantry
           </Button>
