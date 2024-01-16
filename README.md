@@ -1,5 +1,5 @@
 # PantryPal
-The following is a personal pantry cloud tracker template hosted with GitHub Pages, built for DeltaHacksX! 
+PantryPal is a user-friendly website designed to simplify kitchen management by allowing users to input details of their grocery purchases. Users can easily add items, specifying the item name, quantity, purchaser's information, and purchase date. The app organizes this information into a clear and accessible view, providing users with a comprehensive record of their kitchen inventory. PantryPal's user-friendly interface facilitates quick assessments of available items, personalized tracking based on purchaser details, and efficient meal planning with items organized by purchase date. It serves as a practical solution for individuals or families seeking to optimize kitchen organization, reduce food waste, and enhance the overall grocery tracking experience.
 
 ## Technology Stack
 HTML | CSS | [React.js](https://react.dev/) | [Chakra-UI](https://chakra-ui.com/) | [Framer Motion](https://www.framer.com/motion/) | [React-Slick](https://react-slick.neostack.com/)
