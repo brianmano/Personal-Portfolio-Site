@@ -85,7 +85,7 @@ export default class Experiences extends Component {
             <Text fontFamily="Titillium Web, sans-serif;" color={fontcolour2} pb="3"width={{base:"100%", lg: "55%"}}>
               My journey in engineering has been shaped by a diverse range of experiences, each contributing to my growth. Below you can find a link with my resume attached:
             </Text>
-            <Link href = "https://drive.google.com/file/d/1G837Cw9yMQ7vGNIyto_jRXR885sHbwt_/view?usp=sharing" isExternal>
+            <Link href = "https://drive.google.com/file/d/1-7gPSgspN6sR6p3kdtT0tEFWAHldONlf/view?usp=sharing" isExternal>
             <Button fontFamily="Titillium Web, sans-serif;" paddingY="3" colorScheme="red" leftIcon={<IoDocumentAttach/>}>
               Resume
             </Button>
