@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Flex, Stack, VStack, Grid, GridItem, Box, Heading, Text, HStack, useBreakpointValue, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Image, LinkBox, LinkOverlay, SlideFade  } from '@chakra-ui/react';
 import { BsArrowUpRightSquare  } from 'react-icons/bs';
 import './Projects.css';
-import SlideEx1 from './Projects/Project1';
-import SlideEx2 from './Projects/Project2';
-import SlideEx3 from './Projects/Project3';
 import GithubCard from './Github-Card'
 import ExtendedProjects from './Extended_Projects';
 import "../App"

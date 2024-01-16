@@ -4,9 +4,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Flex, Stack, VStack, Grid, GridItem, Box, Heading, Text, HStack, useBreakpointValue, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Image, LinkBox, LinkOverlay, SlideFade  } from '@chakra-ui/react';
 import './Projects.css';
-import SlideEx1 from './Projects/Project1';
-import SlideEx2 from './Projects/Project2';
-import SlideEx3 from './Projects/Project3';
+import SlideEx1 from './Projects/EcoCarTub';
+import SlideEx2 from './Projects/PacemakerProject';
+import SlideEx3 from './Projects/PantryPal';
+import SlideEx4 from './Projects/CPUHeatsink';
+import SlideEx5 from './Projects/SkyjackShelf';
+import SlideEx6 from './Projects/MagneticBelt';
 import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
 import { motion } from "framer-motion";
 
@@ -164,22 +167,43 @@ const ExtendedProjects = () => {
         </Slider>
         {isSlideExVisible && selectedProject && (
                 <>
-                    {selectedProject.name === 'Heatsink Project' && (
+                    {selectedProject.name === 'McMaster EcoCAR EV Rear Tub' && (
                     <SlideEx1
                         isOpen={isSlideExVisible}
                         project={selectedProject}
                         onClose={handleCloseSlideEx}
                     />
                     )}
-                    {selectedProject.name === 'Slacker Chores' && (
+                    {selectedProject.name === 'Pacemaker Project' && (
                     <SlideEx2
                         isOpen={isSlideExVisible}
                         project={selectedProject}
                         onClose={handleCloseSlideEx}
                     />
                     )}
-                    {selectedProject.name === 'Pace++' && (
+                    {selectedProject.name === 'Pantry Pal' && (
                     <SlideEx3
+                        isOpen={isSlideExVisible}
+                        project={selectedProject}
+                        onClose={handleCloseSlideEx}
+                    />
+                    )}
+                                        {selectedProject.name === 'CPU Heatsink Design Challenge' && (
+                    <SlideEx4
+                        isOpen={isSlideExVisible}
+                        project={selectedProject}
+                        onClose={handleCloseSlideEx}
+                    />
+                    )}
+                                        {selectedProject.name === 'Skyjack Paint NCR Shelf' && (
+                    <SlideEx5
+                        isOpen={isSlideExVisible}
+                        project={selectedProject}
+                        onClose={handleCloseSlideEx}
+                    />
+                    )}
+                                        {selectedProject.name === 'Electromagnetic Belt Assisting Gait' && (
+                    <SlideEx6
                         isOpen={isSlideExVisible}
                         project={selectedProject}
                         onClose={handleCloseSlideEx}
