@@ -94,7 +94,7 @@ const RepoInfo = ({ repoName }) => {
             <Card style={{ width: '100%', minHeight: '178px' }} p="2">
               <Flex flexDirection={{ base: 'column', md: 'row' }}>
                     <Link href={repoData.repoLink} isExternal pb="1" pr="2" pt="1.5">
-                        <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
+                        <Button fontFamily="Titillium Web, sans-serif;" leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
                         sx={{
                             '&:hover': {
                             bgColor: "white",
@@ -105,11 +105,11 @@ const RepoInfo = ({ repoName }) => {
                         Github
                         </Button>
                     </Link>
-                    <Heading pb="1">
+                    <Heading fontFamily="Titillium Web, sans-serif;" pb="1">
                      {repoName.substring(repoName.indexOf('/') + 1)}
                     </Heading>
                     </Flex>
-                    <Text  pb="1">
+                    <Text fontFamily="Titillium Web, sans-serif;" pb="1">
                     <strong>Contributors:</strong> {repoData.contributors.join(', ')}
                     </Text>
                     <Flex>
@@ -125,6 +125,7 @@ const RepoInfo = ({ repoName }) => {
                     <Flex flexWrap="wrap" pb="1" width="100%">
                     {Object.entries(repoData.languages).map(([lang, percentage]) => (
                         <Tag
+                        fontFamily="Titillium Web, sans-serif;"
                         key={lang}
                         height="2"
                         width="auto"
@@ -134,15 +135,15 @@ const RepoInfo = ({ repoName }) => {
                         <TagLeftIcon boxSize="10px" as={FaCircle} color={languageColors[lang] || 'gray'} />
                         <TagLabel>
                         <Flex>
-                            <Text pr="1">{lang}{' '}</Text>
-                            <Text color="gray" fontWeight="thin">{percentage}</Text>
+                            <Text fontFamily="Titillium Web, sans-serif;" pr="1">{lang}{' '}</Text>
+                            <Text fontFamily="Titillium Web, sans-serif;" color="gray" fontWeight="thin">{percentage}</Text>
                         </Flex>
                         </TagLabel>
                         </Tag>
                     ))}
                     </Flex>
 
-                    <Text>
+                    <Text fontFamily="Titillium Web, sans-serif;">
                     <strong>Last Updated:</strong> {repoData.lastUpdated.substring(0,10)}
                     </Text>
                 </Card>

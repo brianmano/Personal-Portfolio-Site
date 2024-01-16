@@ -9,8 +9,9 @@ import IslandNavbar from "./components/IslandNavbar";
 function App() {
   return (
     <Box width={{ base: "100%"}} bgGradient="linear(to-t, white, #4B4858, #4B4858, #4B4858, #0F0D15, #0F0D15)" style={{ margin: 0 }} >
-      <VStack spacing={0} p={0} maxW="100%" align="center">
-        <IslandNavbar  />
+      <Navbar  />
+      <VStack spacing={4} p={5} maxW="100%" align="center">
+        
         <Hero />
         <Experiences />
         <Projects />

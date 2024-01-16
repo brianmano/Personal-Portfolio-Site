@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Card, CardHeader, Heading, Link, Text, Button, Tag, TagLeftIcon, Box, Flex, TagLabel } from "@chakra-ui/react";
 import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
 import { IoDocumentAttach } from "react-icons/io5"
+import "../App"
 
 
 /* change the following to customize the page*/
@@ -77,15 +78,15 @@ export default class Experiences extends Component {
     return (
       
       <>
-        <Heading color={fontcolour2} width="100%" paddingX={10} paddingTop={10} id="experience">
+        <Heading fontFamily="Titillium Web, sans-serif;" color={fontcolour2} width="100%" paddingX={10} paddingTop={10} id="experience">
           Experience        
         </Heading>
           <Box paddingX={10} paddingY={5} width="100%" align="left">
-            <Text color={fontcolour2} pb="3"width={{base:"100%", lg: "50%"}}>
+            <Text fontFamily="Titillium Web, sans-serif;" color={fontcolour2} pb="3"width={{base:"100%", lg: "55%"}}>
               My journey in engineering has been shaped by a diverse range of experiences, each contributing to my growth. Below you can find a link with my resume attached:
             </Text>
             <Link href = "https://drive.google.com/file/d/1G837Cw9yMQ7vGNIyto_jRXR885sHbwt_/view?usp=sharing" isExternal>
-            <Button paddingY="3" colorScheme="red" leftIcon={<IoDocumentAttach/>}>
+            <Button fontFamily="Titillium Web, sans-serif;" paddingY="3" colorScheme="red" leftIcon={<IoDocumentAttach/>}>
               Resume
             </Button>
             </Link>
@@ -101,18 +102,18 @@ export default class Experiences extends Component {
                 <Card height="320px" variant="outline" borderColor={experienceList.present ? 'green' : 'gray'}>
                     <Flex direction="column" height="100%">
                       <Box>
-                        <Tag variant='subtle' colorScheme='green' display={experienceList.present ? 'inline-flex' : 'none'}>
-                            <TagLeftIcon boxSize='12px' as={MdCircle} />
+                        <Tag fontFamily="Titillium Web, sans-serif;" variant='subtle' colorScheme='green' display={experienceList.present ? 'inline-flex' : 'none'}>
+                            <TagLeftIcon boxSize='20px' as={MdCircle} />
                             <TagLabel>Now</TagLabel>
                         </Tag>
                         <CardHeader> 
-                          <Heading paddingBottom={2}>{experienceList.jobTitle}</Heading>
-                          <Text>{experienceList.companyName}</Text>
-                          <Text color="gray">{experienceList.companyDepartment}</Text>
+                          <Heading fontFamily="Titillium Web, sans-serif;" paddingBottom={2}>{experienceList.jobTitle}</Heading>
+                          <Text fontFamily="Titillium Web, sans-serif;" >{experienceList.companyName}</Text>
+                          <Text fontFamily="Titillium Web, sans-serif;" color="gray">{experienceList.companyDepartment}</Text>
                         </CardHeader>
                       </Box>
                       <Box marginTop="auto"> 
-                      <Text textAlign="left" paddingTop={2} paddingX="4" paddingBottom={2} color="gray">
+                      <Text fontFamily="Titillium Web, sans-serif;" textAlign="left" paddingTop={2} paddingX="4" paddingBottom={2} color="gray">
                           {experienceList.timeline}
                       </Text>
                       </Box>

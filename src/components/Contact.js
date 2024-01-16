@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Flex, Link, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Tab, useBreakpointValue } from '@chakra-ui/react';
 import { MdOutlineArrowOutward, MdOutlineArrowCircleUp } from "react-icons/md";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, Facode, FaHeart, FaReact } from 'react-icons/fa';
+import "../App"
 
 /* change the following to customize the page*/
 const emaiLink = "mailto:brian.manomaisupat@gmail.com"
@@ -35,7 +36,7 @@ const Contact = () => {
   {shouldRenderSecondHeading ? (
     <div>
         <Flex width="100%" justify='center' align='left'>
-            <Heading color='black' fontSize={100} id="contact">
+            <Heading fontFamily="Titillium Web, sans-serif;" color='black' fontSize={100} id="contact">
                 Get In Touch
                 <Box display="inline-block" ml="2" verticalAlign="middle">
                 <MdOutlineArrowOutward size={90} color='black' />
@@ -45,7 +46,7 @@ const Contact = () => {
     </div>
   ) : (
     <div>
-        <Flex width="100%" justify='center' align='center'>
+        <Flex fontFamily="Titillium Web, sans-serif;" width="100%" justify='center' align='center'>
             <Heading color='black' fontSize={70} id="contact">
                 Get In Touch
                 <Box display="inline-block" ml="2" verticalAlign="middle">
@@ -56,43 +57,42 @@ const Contact = () => {
      </div>
   )}
  
-</Flex>
-      
-            <HStack width="100%" spacing={4} justify='left' flexWrap="wrap">
-                <Link href={emaiLink} isExternal>
-                  <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
-                    {email}
-                  </Button>
-                </Link>
-                <Button leftIcon={<FaPhone />} colorScheme='orange' variant='outline'>
-                    289-788-9659
-                </Button>
-                <Link href={linkedin} isExternal>
-                  <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline' >
-                    LinkedIn  
-                  </Button>
-                </Link>
-                <Link href={github} isExternal>
-                <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
-                  sx={{
-                    '&:hover': {
-                      bgColor: "white",
-                      textColor: 'black',
-                    },
-                  }}
-                >
-                  Github
-              </Button>
-              </Link>
-                  </HStack>
-            <HStack width="100%" spacing={4} justify='left' as="article">
-                <Button variant='link'onClick={scrollToTop} leftIcon={<MdOutlineArrowCircleUp/>}>
-                    Back To Top
-                </Button>
-            </HStack>
-            <Divider />
-      </VStack>
-    </Flex>
+  </Flex>
+    <HStack width="100%" spacing={4} justify='left' flexWrap="wrap">
+        <Link href={emaiLink} isExternal>
+          <Button fontFamily="Titillium Web, sans-serif;" leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
+            {email}
+          </Button>
+        </Link>
+        <Button fontFamily="Titillium Web, sans-serif;" leftIcon={<FaPhone />} colorScheme='orange' variant='outline'>
+            289-788-9659
+        </Button>
+        <Link fontFamily="Titillium Web, sans-serif;" href={linkedin} isExternal>
+          <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline' >
+            LinkedIn  
+          </Button>
+        </Link>
+        <Link fontFamily="Titillium Web, sans-serif;" href={github} isExternal>
+        <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
+          sx={{
+            '&:hover': {
+              bgColor: "white",
+              textColor: 'black',
+            },
+          }}
+        >
+          Github
+      </Button>
+      </Link>
+          </HStack>
+    <HStack width="100%" spacing={4} justify='left' as="article">
+        <Button fontFamily="Titillium Web, sans-serif;" variant='link'onClick={scrollToTop} leftIcon={<MdOutlineArrowCircleUp/>}>
+            Back To Top
+        </Button>
+    </HStack>
+    <Divider />
+    </VStack>
+  </Flex>
  
   );
 };

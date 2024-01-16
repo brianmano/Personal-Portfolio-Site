@@ -17,40 +17,41 @@ const project2_image= "https://images.unsplash.com/photo-1567095761054-7a02e69e5
 const project3_image= "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 const projects = [
   {
-    name: 'Heatsink Project',
-    image: project1_image,
-    description: 'Caffè latte is a coffee beverage of Italian origin made with espresso and steamed milk.',
-    tags: ['Python', 'Python', 'Python'],
+    name: 'McMaster EcoCAR EV Rear Tub',
+    image: project3_image,
+    description: 'Redesign and manufacturing of the rear subframe and rear tub of the Cadillac Lyric to mount the new EcoCAR EV Inverter and Connected Automated Vehicles (CAV) components.',
+    tags: ['Seimens NX', 'Manufacturing', 'Material Design'],
   },
   {
-    name: 'Slacker Chores',
+    name: 'Pacemaker Project',
+    image: project3_image,
+    description: 'Engineered a modern pacemaker, using code in Simulink integrated with a user-friendly Python GUI, and communicating with an NXP FRDM K64F Board via serial communication.',
+    tags: ['Python', 'Simulink', 'Serial Communication'],
+  },
+  {
+    name: 'Pantry Pal',
     image: project2_image,
-    description: 'Caffè latte is a coffee beverage of Italian origin made with espresso and steamed milk.',
-    tags: ['Python', 'Python', 'Python'],
+    description: 'Developed a user-friendly website designed to simplify pantry management by allowing clients to input details of their grocery purchases in a cloud storage for access anywhere.',
+    tags: ['JavasScript', 'CSS', 'HTML'],
   },
   {
-    name: 'Pace++',
-    image: project3_image,
-    description: 'Caffè latte is a coffee beverage of Italian origin made with espresso and steamed milk.',
-    tags: ['Python', 'Python', 'Python'],
+    name: 'CPU Heatsink Design Challenge',
+    image: project1_image,
+    description: 'Creation of a custom CPU Heatsink Design using natural convection to reduce maximum temperatures compared to a factory design, reducing temperatures from 198 C → 132 C.',
+    tags: ['Fusion 360', 'Thermal Analysis', 'Manufacturing', 'Material Design'],
   },
   {
-    name: 'Pace++',
+    name: 'SkyJack Paint NCR Shelf',
     image: project3_image,
-    description: 'Caffè latte is a coffee beverage of Italian origin made with espresso and steamed milk.',
-    tags: ['Python', 'Python', 'Python'],
+    description: 'Designed and engineered a new shelf utilizing SolidWorks, improving the organization of Paint NCRs, improving ergonomics, safety, and cost mitigation for NCR damaged parts.',
+    tags: ['SolidWorks', 'Ergonomics', 'Manufacturing', 'Material Design'],
   },
+
   {
-    name: 'Pace++',
+    name: 'Electromagnetic Belt Assisting Gait',
     image: project3_image,
-    description: 'Caffè latte is a coffee beverage of Italian origin made with espresso and steamed milk.',
-    tags: ['Python', 'Python', 'Python'],
-  },
-  {
-    name: 'Pace++',
-    image: project3_image,
-    description: 'Caffè latte is a coffee beverage of Italian origin made with espresso and steamed milk.',
-    tags: ['Python', 'Python', 'Python'],
+    description: 'Engineered and coded a personal wearable monitoring device that helps a post-stroke patient rehabilitate their gait using neuromuscular rehabilitation and associative learning.',
+    tags: ['Python', 'AutoDesk Inventor', 'Raspberry Pi'],
   },
 ];
 
@@ -131,13 +132,14 @@ const ExtendedProjects = () => {
                 />
                 <Stack width="auto">
                   <CardBody  width="auto">
-                      <Heading>{project.name}</Heading>
+                      <Heading fontFamily="Titillium Web, sans-serif;">{project.name}</Heading>
                         <Box  whiteSpace="normal">
-                        <Text   maxWidth="100%" py="2">{project.description}</Text>
+                        <Text  fontFamily="Titillium Web, sans-serif;" maxWidth="100%" py="2">{project.description}</Text>
                         </Box>           
                     <Flex justifyContent="flex-end">
                     {project.tags.map((tag, tagIndex) => (
                       <Tag
+                        fontFamily="Titillium Web, sans-serif;"
                         key={tagIndex}
                         bottom="20px"
                         right={`${175 - tagIndex * 75}px`}

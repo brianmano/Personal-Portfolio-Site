@@ -87,7 +87,7 @@ export default class Skills extends Component {
           <Slider {...sliderSettings}>
             {doubleArray.map((item, index) => (
               <div key={index}>
-                <Tag size="m" variant="outline" colorScheme="white">
+                <Tag fontFamily="Titillium Web, sans-serif;" size="m" variant="outline" colorScheme="white">
                   <TagLeftIcon as={item[0]} />
                   <TagLabel>{item[1]}</TagLabel>
                 </Tag>

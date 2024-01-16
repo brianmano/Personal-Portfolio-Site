@@ -3,6 +3,7 @@ import { Flex, Link , Image, useToast, VStack, Box, Heading, Spacer, Text, HStac
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
 import "./Hero.css"
 import Skills from "./skill-carousel";
+import '../App.css'
 
 import profileImage from './images/profile.png';
 
@@ -72,25 +73,25 @@ const Hero = () => {
 
     <>
       <Flex align="center" justify="center" minHeight="100vh">
-          <VStack textAlign="center">
+          <VStack textAlign="center" paddingY={17}>
             <Box overflow="hidden" align="center">
-              <Heading color={fontcolourtitle} fontSize={{ base: "9vw", md: "9vw", lg: "9vw" }} fontFamily="Clashgrotesk, sans-serif;">
+              <Heading color={fontcolourtitle} fontWeight={400} fontSize={{ base: "9vw", md: "9vw", lg: "9vw" }} fontFamily="Titillium Web, sans-serif;">
                 {name}
               </Heading>
             </Box>
             <HStack justify="space-between" spacing="4" width="100%">
               <Box overflow="hidden" align="left">
-                <Text color={fontcolourtitle} fontSize={{ base: "2vw", md: "2vw", lg: "2vw" }} fontFamily="Clashgrotesk, sans-serif;">
+                <Text color={fontcolourtitle} fontSize={{ base: "2vw", md: "2vw", lg: "2vw" }} fontFamily="Titillium Web, sans-serif;">
                   {degree} @ {university}
                 </Text>
               </Box>
               <Box overflow="hidden" align="right">
-                <Text color={fontcolourtitle} fontSize={{ base: "2vw", md: "2vw", lg: "2vw" }} fontFamily="Clashgrotesk, sans-serif;">
+                <Text color={fontcolourtitle} fontSize={{ base: "2vw", md: "2vw", lg: "2vw" }} fontFamily="Titillium Web, sans-serif;">
                   Based in Hamilton, ON
                 </Text>
               </Box>
             </HStack>
-            <Box overflow="hidden" paddingY="5" maxWidth="100%" width={{ base: "70vw", md: "350px", lg: "35vw" }}>
+            <Box overflow="hidden" paddingY="1" maxWidth="100%" width={{ base: "70vw", md: "350px", lg: "35vw" }}>
               <Image
                 style={{
                   width: '100%',
@@ -113,7 +114,9 @@ const Hero = () => {
                   variant="outline"
                 />
               ) : (
-                <Button leftIcon={<FaEnvelope />} 
+                <Button
+                fontFamily="Titillium Web, sans-serif;" 
+                leftIcon={<FaEnvelope />} 
                 colorScheme="red" 
                 >
                   {email}
@@ -132,6 +135,7 @@ const Hero = () => {
                 </IconButton>
               ) : (
                 <Button
+                  fontFamily="Titillium Web, sans-serif;"
                   leftIcon={<FaLinkedin />}
                   colorScheme="linkedin"
                 >
@@ -154,6 +158,7 @@ const Hero = () => {
                 </IconButton>
               ) : (
                 <Button
+                  fontFamily="Titillium Web, sans-serif;"
                   leftIcon={<FaGithub />}
                   bgColor="#333"
                   textColor="white"
@@ -172,13 +177,12 @@ const Hero = () => {
 
     <Flex justify="flex-start" width="100%" paddingX="10" flexDirection={{ base: 'column', md: 'row' }}>
       <VStack align="flex-start" spacing="3" flexWrap="wrap">
-
-        <Heading color={fontcolour2} width="100%" paddingTop={10} id="experience">
+        <Heading fontFamily="Titillium Web, sans-serif;" color={fontcolour2} width="100%" paddingTop={10} id="experience">
             About Me        
         </Heading>
         <Flex>
         <Box paddingY ="1" width="100%">
-          <Text color={fontcolour2} width={{base:"100%", lg: "50%"}}>
+          <Text fontFamily="Titillium Web, sans-serif;" color={fontcolour2} width={{base:"100%", lg: "55%"}}>
             {description}
           </Text>
         </Box>
