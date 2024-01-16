@@ -68,7 +68,7 @@ const Navbar = () => {
             ☰
           </MenuButton>
             <MenuList >
-              <Link href="https://drive.google.com/file/d/1G837Cw9yMQ7vGNIyto_jRXR885sHbwt_/view?usp=sharing" isExternal>
+              <Link href="https://drive.google.com/file/d/1-7gPSgspN6sR6p3kdtT0tEFWAHldONlf/view?usp=drive_link" isExternal>
                 <MenuItem  fontFamily="Titillium Web, sans-serif;" variant="link">
                   Resume
                 </MenuItem>
@@ -134,7 +134,7 @@ const Navbar = () => {
       >
         Brian Manomaisupat
       </Box>
-        <Link href="https://drive.google.com/file/d/1G837Cw9yMQ7vGNIyto_jRXR885sHbwt_/view?usp=sharing" isExternal>
+        <Link href="https://drive.google.com/file/d/1-7gPSgspN6sR6p3kdtT0tEFWAHldONlf/view?usp=drive_link" isExternal>
           <Button fontFamily="Titillium Web, sans-serif;" color="#0F0D15" variant="link">
             Resume
           </Button>
