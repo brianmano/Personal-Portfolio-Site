@@ -12,47 +12,49 @@ import SlideEx5 from './Projects/SkyjackShelf';
 import SlideEx6 from './Projects/MagneticBelt';
 import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
 import { motion } from "framer-motion";
+import RearTub2 from './images/RearTub2.jpg';
+import pantrypal from './images/Login card.png'
+import pacemaker from './images/K64F-Board.jpg'
+import electromagneticbelt from './images/beltgif.gif'
+import heatsink from './images/Heatsink isometric.jpg'
+import ncrshelf from './images/ncrshelf.jpg'
 
 
-
-const project1_image= "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=2011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-const project2_image= "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-const project3_image= "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 const projects = [
   {
     name: 'McMaster EcoCAR EV Rear Tub',
-    image: project3_image,
+    image: RearTub2,
     description: 'Redesign and manufacturing of the rear subframe and rear tub of the Cadillac Lyric to mount the new EcoCAR EV Inverter and Connected Automated Vehicles (CAV) components.',
     tags: ['Seimens NX', 'Manufacturing', 'Material Design'],
   },
   {
     name: 'Pacemaker Project',
-    image: project3_image,
+    image: pacemaker,
     description: 'Engineered a modern pacemaker, using code in Simulink integrated with a user-friendly Python GUI, and communicating with an NXP FRDM K64F Board via serial communication.',
     tags: ['Python', 'Simulink', 'Serial Communication'],
   },
   {
     name: 'Pantry Pal',
-    image: project2_image,
+    image: pantrypal,
     description: 'Developed a user-friendly website designed to simplify pantry management by allowing clients to input details of their grocery purchases in a cloud storage for access anywhere.',
     tags: ['JavasScript', 'CSS', 'HTML'],
   },
   {
     name: 'CPU Heatsink Design Challenge',
-    image: project1_image,
+    image: heatsink,
     description: 'Creation of a custom CPU Heatsink Design using natural convection to reduce maximum temperatures compared to a factory design, reducing temperatures from 198 C → 132 C.',
     tags: ['Fusion 360', 'Thermal Analysis', 'Manufacturing', 'Material Design'],
   },
   {
     name: 'SkyJack Paint NCR Shelf',
-    image: project3_image,
+    image: ncrshelf,
     description: 'Designed and engineered a new shelf utilizing SolidWorks, improving the organization of Paint NCRs, improving ergonomics, safety, and cost mitigation for NCR damaged parts.',
     tags: ['SolidWorks', 'Ergonomics', 'Manufacturing', 'Material Design'],
   },
 
   {
     name: 'Electromagnetic Belt Assisting Gait',
-    image: project3_image,
+    image: electromagneticbelt,
     description: 'Engineered and coded a personal wearable monitoring device that helps a post-stroke patient rehabilitate their gait using neuromuscular rehabilitation and associative learning.',
     tags: ['Python', 'AutoDesk Inventor', 'Raspberry Pi'],
   },
