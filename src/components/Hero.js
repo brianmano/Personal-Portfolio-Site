@@ -72,7 +72,7 @@ const Hero = () => {
   return ( 
 
     <>
-      <Flex align="center" justify="center" minHeight="100vh">
+        <Flex align="center" justify="center" minHeight="100vh">
           <VStack textAlign="center" paddingY={17}>
             <Box overflow="hidden" align="center">
               <Heading color={fontcolourtitle} fontWeight={400} fontSize={{ base: "9vw", md: "9vw", lg: "9vw" }} fontFamily="Titillium Web, sans-serif;">
@@ -172,7 +172,7 @@ const Hero = () => {
             </HStack>
           </VStack>
         </Flex>
-        <Skills /> 
+    <Skills /> 
     
 
     <Flex justify="flex-start" width="100%" paddingX="10" flexDirection={{ base: 'column', md: 'row' }}>

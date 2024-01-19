@@ -12,15 +12,12 @@ function App() {
     <Box width={{ base: "100%"}} bgGradient="linear(to-t, white, #4B4858, #4B4858, #4B4858, #0F0D15, #0F0D15)" style={{ margin: 0 }} >
       <Navbar  />
       <VStack spacing={4} p={5} maxW="100%" align="center">
-      {/* <Routes> */}
         <Hero/>
         <Experiences/>
         <Projects/>
         <Contact/>
-      {/* </Routes> */}
       </VStack>
     </Box>
-
   );
 }
 
