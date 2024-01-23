@@ -197,7 +197,7 @@ const ExtendedProjects = () => {
                         onClose={handleCloseSlideEx}
                     />
                     )}
-                                        {selectedProject.name === 'Skyjack Paint NCR Shelf' && (
+                                        {selectedProject.name === 'SkyJack Paint NCR Shelf' && (
                     <SlideEx5
                         isOpen={isSlideExVisible}
                         project={selectedProject}

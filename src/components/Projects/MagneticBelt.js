@@ -1,6 +1,6 @@
 // SlideEx.js
 import React, { useState, useEffect } from 'react';
-import { useBreakpointValue, Card, CardBody, Stack, Grid, GridItem, Slide, Flex, Image, Box, Button, Text, Heading, Tag, TagLabel, List, ListItem, ListIcon, OrderedList,  UnorderedList, HStack, VStack} from '@chakra-ui/react';
+import { Link, useBreakpointValue, Card, CardBody, Stack, Grid, GridItem, Slide, Flex, Image, Box, Button, Text, Heading, Tag, TagLabel, List, ListItem, ListIcon, OrderedList,  UnorderedList, HStack, VStack} from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { MdOpenInNew } from 'react-icons/md';
@@ -42,30 +42,28 @@ function SlideEx({ isOpen, onClose }) {
 
           {/* Start of the Document */}
           <Box lassName="Header" >
-            <Heading fontSize="50" mb="1">Title</Heading>
-            <Text color="gray">DD/MM/YYYY</Text>
+            <Heading fontSize="50" mb="1">Electromagnetic Belt Assisting Gait</Heading>
+            <Text color="gray">March 2023 - April 2023</Text>
             <Flex justifyContent="flex-start" mt="2">
-              <Button mr="2" rightIcon={<MdOpenInNew/>} colorScheme='blue' variant="outline">
-                  Website
+              <Link href = "https://github.com/brianmano/Electromagnet_System_Project_Code" isExternal>
+                <Button mr="2" leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
+                  sx={{
+                    '&:hover': {
+                      bgColor: "white",
+                      textColor: 'black',
+                    },
+                  }}
+                >
+                  Github
                 </Button>
-              <Button mr="2" leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
-                sx={{
-                  '&:hover': {
-                    bgColor: "white",
-                    textColor: 'black',
-                  },
-                }}
-              >
-                Github
-              </Button>
-              
+              </Link>
             </Flex>
             
             <Flex justifyContent="flex-start" mt="2">
               
               <Tag mr="2" ><TagLabel>Python</TagLabel></Tag>
-              <Tag mr="2" ><TagLabel>Python</TagLabel></Tag>
-              <Tag mr="2" ><TagLabel>Python</TagLabel></Tag>
+              <Tag mr="2" ><TagLabel>AutoDesk Inventor</TagLabel></Tag>
+              <Tag mr="2" ><TagLabel>Raspberry Pi</TagLabel></Tag>
             </Flex>
             <Image mt="5" width="100%"  objectFit="cover" height="400px" borderRadius="10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Color_icon_green.png/640px-Color_icon_green.png"/>
           </Box>
