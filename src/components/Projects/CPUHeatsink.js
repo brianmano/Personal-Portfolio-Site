@@ -4,6 +4,11 @@ import { useBreakpointValue, Card, CardBody, Stack, Grid, GridItem, Slide, Flex,
 import { FaGithub } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { MdOpenInNew } from 'react-icons/md';
+import heatsinkdefault from '../images/Heatsink Default.png'
+import heatsinkiso from '../images/Heatsink isometric.jpg'
+import heatsinktemp from '../images/Heatsink Temp.png'
+import thermaldev from '../images/Thermal DEV Challenge Heat Sink Drawing Package.pdf'
+import report from '../images/2023 EcoCAR EV Challenge.pdf'
 
 
 
@@ -43,29 +48,20 @@ function SlideEx({ isOpen, onClose }) {
           {/* Start of the Document */}
           <Box lassName="Header" >
             <Heading fontSize="50" mb="1">CPU Heatsink Design Challenge</Heading>
-            <Text color="gray">DD/MM/YYYY</Text>
+            <Text color="gray">September 2023</Text>
             <Flex justifyContent="flex-start" mt="2">
               <Button mr="2" rightIcon={<MdOpenInNew/>} colorScheme='blue' variant="outline">
-                  Website
+                  Report
                 </Button>
-              <Button mr="2" leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
-                sx={{
-                  '&:hover': {
-                    bgColor: "white",
-                    textColor: 'black',
-                  },
-                }}
-              >
-                Github
-              </Button>
               
             </Flex>
             
             <Flex justifyContent="flex-start" mt="2">
               
-              <Tag mr="2" ><TagLabel>Python</TagLabel></Tag>
-              <Tag mr="2" ><TagLabel>Python</TagLabel></Tag>
-              <Tag mr="2" ><TagLabel>Python</TagLabel></Tag>
+              <Tag mr="2" ><TagLabel>Fusion 360</TagLabel></Tag>
+              <Tag mr="2" ><TagLabel>Thermal Analysis</TagLabel></Tag>
+              <Tag mr="2" ><TagLabel>Manufacturing</TagLabel></Tag>
+              <Tag mr="2" ><TagLabel>Material Design</TagLabel></Tag>
             </Flex>
             <Image mt="5" width="100%"  objectFit="cover" height="400px" borderRadius="10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Color_icon_green.png/640px-Color_icon_green.png"/>
           </Box>
@@ -83,10 +79,10 @@ function SlideEx({ isOpen, onClose }) {
             */}
             <HStack flexDirection={{ base: 'column', md: 'row' }} spacing={10} >
               <VStack align="left" maxW={{ base: '100%', md: '60%' }} >
-              <Heading fontSize={20} mt="5" mb="2.5">Key Responsibilities</Heading>
+              <Heading fontSize={20} mt="5" mb="2.5">Summary</Heading>
               <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec est tortor. Nullam posuere hendrerit massa, sed dictum eros pharetra vitae. Sed ornare volutpat nibh quis pharetra. Cras facilisis mollis felis, at dapibus orci. Maecenas finibus ullamcorper eros eu tempor. Sed id tempor nulla. Sed vitae arcu in ligula placerat pretium non vel libero. Vivamus mauris dui, volutpat eget nisi sit amet, dapibus tincidunt tellus. Mauris quis cursus nibh. Nam sit amet enim vel dui iaculis sodales. Fusce non lacus at enim vehicula lacinia eu vitae nibh. Vivamus at fermentum purus. Phasellus sed lectus lectus. Vivamus pellentesque enim ac orci pretium consectetur.
-
+              As a part of a design challenge, my partner and I tasked ourselves with creating a custom cpu heatsink that performed better than an engineering drawing we were provided as an example. 
+              Utilizing concepts of thermodynamics, we created a more efficient natural convection heatsink, backed with thermal simulations used to test efficacy, the methods of manufacturing, material and cost research, and future areas of improvement.   
               </Text> 
               </VStack>
               <VStack align="left" >
@@ -119,10 +115,9 @@ function SlideEx({ isOpen, onClose }) {
 
           </Box>
           <Heading fontSize={20} mt="5" mb="2.5">Showcase</Heading>
-
-          <Card mb={4} display = 'flex' >
+          <Card mb={4} display = 'flex' width = "100%" >
             <CardBody>
-            <Heading size='s' mb='3' >Paragraph 1</Heading>
+            <Heading size='s' mb='3' >Thermal Design</Heading>
               <Image src='https://media.wired.com/photos/620581d7c228dc232641feaa/master/pass/Games-Innersloth-Among-Us-Key-Art.jpg'
                 borderRadius='lg'
                 width='500px'
@@ -137,6 +132,62 @@ function SlideEx({ isOpen, onClose }) {
               </Flex>
             </CardBody>
           </Card>
+
+          <Flex>
+          <Card mb={4} display = 'flex' >
+            <CardBody>
+            <Heading size='s' mb='3' >Structural Integrity</Heading>
+              <Image src='https://media.wired.com/photos/620581d7c228dc232641feaa/master/pass/Games-Innersloth-Among-Us-Key-Art.jpg'
+                borderRadius='lg'
+                width='500px'
+                height='auto'
+              />
+              <Flex>
+                <Stack mt='6' spacing='3'>
+                  <Text>
+                    I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree 
+                  </Text>
+                </Stack>
+              </Flex>
+            </CardBody>
+          </Card>
+          <Card mb={4} display = 'flex' >
+            <CardBody>
+            <Heading size='s' mb='3' >Manufacturing Research</Heading>
+              <Image src='https://media.wired.com/photos/620581d7c228dc232641feaa/master/pass/Games-Innersloth-Among-Us-Key-Art.jpg'
+                borderRadius='lg'
+                width='500px'
+                height='auto'
+              />
+              <Flex>
+                <Stack mt='6' spacing='3'>
+                  <Text>
+                    I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree 
+                  </Text>
+                </Stack>
+              </Flex>
+            </CardBody>
+          </Card>
+          <Card mb={4} display = 'flex' >
+            <CardBody>
+            <Heading size='s' mb='3' >Material Research</Heading>
+              <Image src='https://media.wired.com/photos/620581d7c228dc232641feaa/master/pass/Games-Innersloth-Among-Us-Key-Art.jpg'
+                borderRadius='lg'
+                width='500px'
+                height='auto'
+              />
+              <Flex>
+                <Stack mt='6' spacing='3'>
+                  <Text>
+                    I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree I agree 
+                  </Text>
+                </Stack>
+              </Flex>
+            </CardBody>
+          </Card>
+          </Flex>
+
+
           
           <Heading fontSize={20} mt="5" mb="2.5">Gallery</Heading>
           <Grid
@@ -162,9 +213,8 @@ function SlideEx({ isOpen, onClose }) {
           </Grid>
           <Heading fontSize={20} mt="5">Credits</Heading>
 
-          <Text>Person 1: [Role]</Text>
-          <Text>Person 2: [Role]</Text>
-          <Text>Person 3: [Role]</Text>
+          <Text>Brian Manomaisupat: [Team Member]</Text>
+          <Text>Varun Kothandaraman: [Team Member]</Text>
 
 
 
