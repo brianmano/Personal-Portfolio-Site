@@ -59,24 +59,18 @@ function SlideEx({ isOpen, onClose }) {
               <Tag mr="2" ><TagLabel>Material Design</TagLabel></Tag>
             </Flex>
             <Flex>
-              <Image mt="5" width="25%" objectFit="cover" borderRadius="10" src={reartub} />
-              <Image mt="5" width="33%" objectFit="cover" borderRadius="10" src={reartub1} />
-              <Image mt="5" width="57%" objectFit="cover" borderRadius="10" src={reartub2} />
+              <Image mt="5" width="25%" objectFit="cover" borderRadius="10" marginRight='2'  src={reartub} />
+              <Image mt="5" width="33%" objectFit="cover" borderRadius="10" marginRight='2' src={reartub1} />
+              <Image mt="5" width="40%" objectFit="cover" borderRadius="10" marginRight='2' src={reartub2} />
             </Flex>
+            <Text as="span" style={{ fontStyle: 'italic' }} >
+              Displayed above are the default tub images. Due to NDA Standards, I cannot final images of my design.
+            </Text>
             
           </Box>
           
           <Box className="Introduction" >
             <Heading fontSize={35} mt="5" mb="">Quick Summary</Heading>
-            {/* 
-            Our team was assigned/set out to solve the following problem []. 
-            
-            To solve this we developed the [name of project] that utilized the following [list of items]
-
-            The project allows the following features/objects to be done 
-            
-            *Remember to add specific stats wherever possile*
-            */}
             <HStack flexDirection={{ base: 'column', md: 'row' }} spacing={10} >
               <VStack align="left" maxW={{ base: '100%', md: '60%' }} >
               <Heading fontSize={20} mt="5" mb="2.5">Goal</Heading>

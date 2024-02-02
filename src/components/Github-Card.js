@@ -3,6 +3,11 @@ import axios from 'axios';
 import { Flex, Progress, Link, Stack, VStack, Box, Heading, Text, HStack, useBreakpointValue, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Image, LinkBox, LinkOverlay, SlideFade  } from '@chakra-ui/react';
 import { FaCircle, FaEnvelope, FaPhone, FaLinkedin, FaGithub, Facode, FaHeart, FaReact } from 'react-icons/fa';
 import { motion } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
+import { useMediaQuery } from '@chakra-ui/react';
 
 /* List of common languages - look at colors.json for other colors to reference*/
 const languageColors = {
@@ -27,6 +32,7 @@ const languageColors = {
 
 
 const RepoInfo = ({ repoName }) => {
+  
   const [repoData, setRepoData] = useState(null);
 
   useEffect(() => {
@@ -70,10 +76,37 @@ const RepoInfo = ({ repoName }) => {
     fetchRepoData();
   }, [repoName]);
 
-  
-
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    swipeToSlide: true,
+    slidesToShow: 3, // Adjust the number of slides shown
+    slidesToScroll: 1,
+    lazyLoad: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+    ],
+  };
   return (
-    <div style={{ width: '100%' }}>
+
+
       <motion.div
             initial={{ scale: 0.95 }}
             whileHover="hover"
@@ -88,12 +121,11 @@ const RepoInfo = ({ repoName }) => {
             }}
             >
     {repoData ? (
-      <div style={{ width: '100%' }}>
-        <Flex style={{ width: '100%' }}>
-          <Box style={{ width: '100%' }}>
+        
             <Card style={{ width: '100%', minHeight: '178px' }} p="2">
               <Flex flexDirection={{ base: 'column', md: 'row' }}>
-                    <Link href={repoData.repoLink} isExternal pb="1" pr="2" pt="1.5">
+                <VStack spacing="1" align={{ base: 'stretch', md: 'flex-start' }}>
+                  <Link href={repoData.repoLink} isExternal pb="1" pr="2" pt="1.5">
                         <Button fontFamily="Titillium Web, sans-serif;" leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
                         sx={{
                             '&:hover': {
@@ -108,6 +140,8 @@ const RepoInfo = ({ repoName }) => {
                     <Heading fontFamily="Titillium Web, sans-serif;" pb="1">
                      {repoName.substring(repoName.indexOf('/') + 1)}
                     </Heading>
+                </VStack>
+
                     </Flex>
                     <Text fontFamily="Titillium Web, sans-serif;" pb="1">
                     <strong>Contributors:</strong> {repoData.contributors.join(', ')}
@@ -147,14 +181,12 @@ const RepoInfo = ({ repoName }) => {
                     <strong>Last Updated:</strong> {repoData.lastUpdated.substring(0,10)}
                     </Text>
                 </Card>
-            </Box>
-          </Flex>
-        </div>
+                
       ) : (
         <p>Loading...</p>
       )}
       </motion.div>
-    </div>
+
   );
 };
 

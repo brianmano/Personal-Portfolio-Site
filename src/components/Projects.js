@@ -21,11 +21,12 @@ const repoNames = [
   {
     name: 'brianmano/Pacemaker_Project'
   },
-  {
-    name: 'brianmano/Electromagnet_System_Project_Code'
-  },
+
   {
     name: 'MenHackers/PantryPal'
+  },
+  {
+    name: 'brianmano/Electromagnet_System'
   },
 ];
 

@@ -1,15 +1,12 @@
 // SlideEx.js
 import React, { useState, useEffect } from 'react';
-import { useBreakpointValue, Card, CardBody, Stack, Grid, GridItem, Slide, Flex, Image, Box, Button, Text, Heading, Tag, TagLabel, List, ListItem, ListIcon, OrderedList,  UnorderedList, HStack, VStack} from '@chakra-ui/react';
+import { Link, useBreakpointValue, Card, CardBody, Stack, Grid, GridItem, Slide, Flex, Image, Box, Button, Text, Heading, Tag, TagLabel, List, ListItem, ListIcon, OrderedList,  UnorderedList, HStack, VStack} from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { MdOpenInNew } from 'react-icons/md';
 import heatsinkdefault from '../images/Heatsink Default.png'
 import heatsinkiso from '../images/Heatsink isometric.jpg'
 import heatsinktemp from '../images/Heatsink Temp.png'
-import thermaldev from '../images/Thermal DEV Challenge Heat Sink Drawing Package.pdf'
-import report from '../images/2023 EcoCAR EV Challenge.pdf'
-
 
 
 function SlideEx({ isOpen, onClose }) {
@@ -50,9 +47,16 @@ function SlideEx({ isOpen, onClose }) {
             <Heading fontSize="50" mb="1">CPU Heatsink Design Challenge</Heading>
             <Text color="gray">September 2023</Text>
             <Flex justifyContent="flex-start" mt="2">
-              <Button mr="2" rightIcon={<MdOpenInNew/>} colorScheme='blue' variant="outline">
+            <Link href="https://drive.google.com/file/d/1Lajgt2AT7G7ZIsw9Qn7NInJONjGSqvb0/view?usp=sharing" isExternal>
+              <Button mr="2" rightIcon={<MdOpenInNew/>} colorScheme='blue'>
                   Report
                 </Button>
+            </Link>
+            <Link href="https://drive.google.com/file/d/1_vr8Yytuv5EswKry-7_TWbZ3MDCJZJkd/view?usp=sharing" isExternal>
+              <Button mr="2" rightIcon={<MdOpenInNew/>} colorScheme='red'>
+                  Default Heatsink & Components
+                </Button>
+            </Link>
               
             </Flex>
             
@@ -63,20 +67,14 @@ function SlideEx({ isOpen, onClose }) {
               <Tag mr="2" ><TagLabel>Manufacturing</TagLabel></Tag>
               <Tag mr="2" ><TagLabel>Material Design</TagLabel></Tag>
             </Flex>
-            <Image mt="5" width="100%"  objectFit="cover" height="400px" borderRadius="10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Color_icon_green.png/640px-Color_icon_green.png"/>
+            <Flex >
+              <Image mt="5" width="50%"  objectFit="cover" height="50%" borderRadius="10" marginRight='4' src= {heatsinkiso}/>
+              <Image mt="5" width="50%"  objectFit="cover" height="50%" borderRadius="10" marginRight='4' src= {heatsinktemp}/>
+            </Flex>
           </Box>
           
           <Box className="Introduction" >
             <Heading fontSize={35} mt="5" mb="">Quick Summary</Heading>
-            {/* 
-            Our team was assigned/set out to solve the following problem []. 
-            
-            To solve this we developed the [name of project] that utilized the following [list of items]
-
-            The project allows the following features/objects to be done 
-            
-            *Remember to add specific stats wherever possile*
-            */}
             <HStack flexDirection={{ base: 'column', md: 'row' }} spacing={10} >
               <VStack align="left" maxW={{ base: '100%', md: '60%' }} >
               <Heading fontSize={20} mt="5" mb="2.5">Summary</Heading>
@@ -88,10 +86,10 @@ function SlideEx({ isOpen, onClose }) {
               <VStack align="left" >
               <Heading fontSize={20} >My Role</Heading>
               <UnorderedList >
-                <ListItem>Lorem ipsum dolor sit amet</ListItem>
-                <ListItem>Consectetur adipiscing elit</ListItem>
-                <ListItem>Integer molestie lorem at massa</ListItem>
-                <ListItem>Facilisis in pretium nisl aliquet</ListItem>
+                <ListItem>Re-engineered and CAD'ed the different root, stem, and shape iterations for the heatsink design</ListItem>
+                <ListItem>Performed thermal simulations to test design iterations</ListItem>
+                <ListItem>Researched thermodynamic principles relating to heatsink design and fluid dynamics</ListItem>
+                <ListItem>Researched various methods of manufacturing and materials</ListItem>
               </UnorderedList>
               </VStack>
             </HStack>

@@ -151,7 +151,7 @@ const ExtendedProjects = () => {
                         variant="subtle"
                         colorScheme="gray"
                         mr="2" 
-                        mt={{ base: "2", sm: '8' }}
+                        
                       >
                         <TagLabel>{tag}</TagLabel>
                       </Tag>
