@@ -64,7 +64,7 @@ function SlideEx({ isOpen, onClose }) {
               <Image mt="5" width="40%" objectFit="cover" borderRadius="10" marginRight='2' src={reartub2} />
             </Flex>
             <Text as="span" style={{ fontStyle: 'italic' }} >
-              Displayed above are the default tub images. Due to NDA Standards, I cannot final images of my design.
+              Displayed above are the default tub images. Due to NDA Standards, I cannot show final images of my design.
             </Text>
             
           </Box>

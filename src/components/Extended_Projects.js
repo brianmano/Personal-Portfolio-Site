@@ -9,7 +9,7 @@ import SlideEx2 from './Projects/PacemakerProject';
 import SlideEx3 from './Projects/PantryPal';
 import SlideEx4 from './Projects/CPUHeatsink';
 import SlideEx5 from './Projects/SkyjackShelf';
-import SlideEx6 from './Projects/MagneticBelt';
+// import SlideEx6 from './Projects/MagneticBelt';
 import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
 import { motion } from "framer-motion";
 import RearTub2 from './images/RearTub2.jpg';
@@ -52,12 +52,12 @@ const projects = [
     tags: ['SolidWorks', 'Ergonomics', 'Manufacturing', 'Material Design'],
   },
 
-  {
-    name: 'Electromagnetic Belt Assisting Gait',
-    image: electromagneticbelt,
-    description: 'Engineered and coded a personal wearable monitoring device that helps a post-stroke patient rehabilitate their gait using neuromuscular rehabilitation and associative learning.',
-    tags: ['Python', 'AutoDesk Inventor', 'Raspberry Pi'],
-  },
+  // {
+  //   name: 'Electromagnetic Belt Assisting Gait',
+  //   image: electromagneticbelt,
+  //   description: 'Engineered and coded a personal wearable monitoring device that helps a post-stroke patient rehabilitate their gait using neuromuscular rehabilitation and associative learning.',
+  //   tags: ['Python', 'AutoDesk Inventor', 'Raspberry Pi'],
+  // },
 ];
 
 /*-------------------------------------------*/
@@ -204,13 +204,13 @@ const ExtendedProjects = () => {
                         onClose={handleCloseSlideEx}
                     />
                     )}
-                                        {selectedProject.name === 'Electromagnetic Belt Assisting Gait' && (
+                                        {/* {selectedProject.name === 'Electromagnetic Belt Assisting Gait' && (
                     <SlideEx6
                         isOpen={isSlideExVisible}
                         project={selectedProject}
                         onClose={handleCloseSlideEx}
                     />
-                    )}
+                    )} */}
                 </>
                 )}
                 </Box>

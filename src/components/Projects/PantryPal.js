@@ -103,7 +103,7 @@ function SlideEx({ isOpen, onClose }) {
             */}
             <HStack flexDirection={{ base: 'column', md: 'row' }} spacing={10} >
               <VStack align="left" maxW={{ base: '100%', md: '60%' }} >
-              <Heading fontSize={20} mt="5" mb="2.5">Goal</Heading>
+              <Heading fontSize={20} mt="5" mb="2.5">Motivation</Heading>
               <Text>
               Our group wanted to help many communities, from food banks to families in houses to roomates, be able to keep their pantry organized to lessen the burden of expired food.
               More specifically, we have personally seen how catalogues within food banks become extremely lengthy, causing the expiry of food where it could have been prevented with a tad bit organization.
@@ -120,25 +120,41 @@ function SlideEx({ isOpen, onClose }) {
             </HStack>
             
           </Box>
-          <Box className='Solution'>
-            <Heading fontSize={20} mt="5" mb="2.5">Our Solution</Heading>
+          <Card mb={4} mt={6} display='flex' width="60%" bg='lightgray'>
+            <Heading fontSize={20} m="2" mb="2.5">Our Solution</Heading>
             {/* 
 
             During this project, our solution solved the following using the following
             
             */}
             
-            <Text pt="2.5" width = "60%">
-            PantryPal is a user-friendly website designed to simplify kitchen management by allowing users to input details of their grocery purchases. Users can easily add items, specifying the item name, quantity, purchaser's information, and purchase date. The app organizes this information into a clear and accessible view, providing users with a comprehensive record of their kitchen inventory. PantryPal's user-friendly interface facilitates quick assessments of available items, personalized tracking based on purchaser details, and efficient meal planning with items organized by purchase date. It serves as a practical solution for individuals or families seeking to optimize kitchen organization, reduce food waste, and enhance the overall grocery tracking experience.
+            <Text pt="2.5" m = "2">
+              PantryPal is a user-friendly website designed to 
+            <Text as="span" fontWeight="bold"> {' '}
+              simplify kitchen management 
+            </Text> {' '}
+              by allowing users to input details of their grocery purchases. Users can easily add items, specifying the item name, quantity, purchaser's information, and purchase date. The app organizes this information into a clear and accessible view, providing users with a comprehensive record of their kitchen inventory. 
             </Text>
-          </Box>
+
+            <Text pt="1" m = "2" as="span" fontWeight="bold"> {' '}
+              PantryPal's user-friendly interface facilitates quick assessments of available items, personalized tracking based on purchaser details, and efficient meal planning with items organized by purchase date. 
+            </Text> {' '}
+
+            <Text pt="1" m = "2" as="span" fontWeight="bold" color = "darkgreen"> {' '}
+                It serves as a practical solution for individuals or families seeking to optimize kitchen organization, reduce food waste, and enhance the overall grocery tracking experience. 
+            </Text> 
+
+            
+            
+            
+          </Card>
           <Box className='ShowcaseAndProcess'>
 
           </Box>
           <Heading fontSize={20} mt="5" mb="2.5">Showcase</Heading>
 
           <Flex>
-            <Card mb={4} display = 'flex' width="70%">
+            <Card mb={4} display = 'flex' width="70%" >
               <CardBody>
               <Heading size='s' mb='3' >Login & Main Pages</Heading>
               <Flex>
