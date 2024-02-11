@@ -4,8 +4,8 @@ import Hero from "./components/Hero";
 import Experiences from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import Skills from "./components/skill-carousel";
-import IslandNavbar from "./components/IslandNavbar";
+// import Skills from "./components/skill-carousel";
+// import IslandNavbar from "./components/IslandNavbar";
 
 function App() {
   return (
