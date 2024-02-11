@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Flex, Link , Image, useToast, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, IconButton, useBreakpointValue } from '@chakra-ui/react';
+import React from 'react';
+import { Flex, Link , Image, VStack, Box, Heading, Text, HStack, Button, IconButton, useBreakpointValue } from '@chakra-ui/react';
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
 import "./Hero.css"
 import Skills from "./skill-carousel";

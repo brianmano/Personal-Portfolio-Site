@@ -1,9 +1,9 @@
 // SlideEx.js
-import React, { useState, useEffect } from 'react';
-import { Link, useBreakpointValue, Card, CardBody, Stack, Grid, GridItem, Slide, Flex, Image, Box, Button, Text, Heading, Tag, TagLabel, List, ListItem, ListIcon, OrderedList,  UnorderedList, HStack, VStack} from '@chakra-ui/react';
+import React from 'react';
+import { Link, useBreakpointValue, Card, CardBody, Stack, Grid, GridItem, Slide, Flex, Image, Box, Button, Text, Heading, Tag, TagLabel, List, ListItem, UnorderedList, HStack, VStack} from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
-import { MdOpenInNew } from 'react-icons/md';
+// import { MdOpenInNew } from 'react-icons/md';
 import K64FBoard from '../images/K64F-Board.jpg'
 import regscreen from '../images/Reg-Screen.jpg'
 import loginscreen from '../images/Login-Screen.jpg'
@@ -50,7 +50,7 @@ function SlideEx({ isOpen, onClose }) {
             <Heading fontSize="50" mb="1">Pacemaker Project</Heading>
             <Text color="gray">September 2023 - December 2023</Text>
             <Flex justifyContent="flex-start" mt="2">
-            <Link href="https://www.macecocar.ca/" isExternal>
+            <Link href="https://github.com/brianmano/Pacemaker_Project" isExternal>
               <Button mr="2" leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
                 sx={{
                   '&:hover': {

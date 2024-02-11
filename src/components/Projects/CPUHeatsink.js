@@ -1,10 +1,10 @@
 // SlideEx.js
-import React, { useState, useEffect } from 'react';
-import { Link, useBreakpointValue, Card, CardBody, Stack, Grid, GridItem, Slide, Flex, Image, Box, Button, Text, Heading, Tag, TagLabel, List, ListItem, ListIcon, OrderedList,  UnorderedList, HStack, VStack} from '@chakra-ui/react';
-import { FaGithub } from 'react-icons/fa';
+import React from 'react';
+import { Link, useBreakpointValue, Card, CardBody, Stack, Slide, Flex, Image, Box, Button, Text, Heading, Tag, TagLabel, ListItem, UnorderedList, HStack, VStack} from '@chakra-ui/react';
+// import { FaGithub } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { MdOpenInNew } from 'react-icons/md';
-import heatsinkdefault from '../images/Heatsink Default.png'
+// import heatsinkdefault from '../images/Heatsink Default.png'
 import heatsinkiso from '../images/Heatsink isometric.jpg'
 import heatsinktemp from '../images/Heatsink Temp.png'
 import finalschem from '../images/Final Schematic.png'
@@ -17,7 +17,7 @@ import ends from '../images/ends.jpg'
 
 
 function SlideEx({ isOpen, onClose }) {
-  const gridColumnCount = useBreakpointValue({ base: 10, sm: 10, md: 10, lg: 10, xl: 10 });
+  // const gridColumnCount = useBreakpointValue({ base: 10, sm: 10, md: 10, lg: 10, xl: 10 });
 
   return (
     <Slide direction="bottom" in={isOpen} style={{ zIndex: 10, position: 'fixed', top: 0, left: 0, right: 0 }}>

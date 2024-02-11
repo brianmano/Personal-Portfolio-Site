@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Flex, Link, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Tab, useBreakpointValue } from '@chakra-ui/react';
+import React from 'react';
+import { Flex, Link, VStack, Box, Heading, HStack, Button, Divider, useBreakpointValue } from '@chakra-ui/react';
 import { MdOutlineArrowOutward, MdOutlineArrowCircleUp } from "react-icons/md";
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, Facode, FaHeart, FaReact } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, } from 'react-icons/fa';
 import "../App"
 
 /* change the following to customize the page*/

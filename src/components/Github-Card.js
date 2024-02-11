@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Flex, Progress, Link, Stack, VStack, Box, Heading, Text, HStack, useBreakpointValue, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Image, LinkBox, LinkOverlay, SlideFade  } from '@chakra-ui/react';
-import { FaCircle, FaEnvelope, FaPhone, FaLinkedin, FaGithub, Facode, FaHeart, FaReact } from 'react-icons/fa';
+import { Flex, Link, VStack, Box, Heading, Text, Button,  Tag, TagLeftIcon, TagLabel, Card } from '@chakra-ui/react';
+import { FaCircle, FaGithub } from 'react-icons/fa';
 import { motion } from "framer-motion";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
-import { useMediaQuery } from '@chakra-ui/react';
+// import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
+// import { useMediaQuery } from '@chakra-ui/react';
 
 /* List of common languages - look at colors.json for other colors to reference*/
 const languageColors = {

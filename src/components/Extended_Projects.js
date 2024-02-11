@@ -1,8 +1,8 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Flex, Stack, VStack, Grid, GridItem, Box, Heading, Text, HStack, useBreakpointValue, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Image, LinkBox, LinkOverlay, SlideFade  } from '@chakra-ui/react';
+import { Flex, Stack, Box, Heading, Text, Tag, TagLabel, Card, CardBody, Image } from '@chakra-ui/react';
 import './Projects.css';
 import SlideEx1 from './Projects/EcoCarTub';
 import SlideEx2 from './Projects/PacemakerProject';
@@ -10,12 +10,11 @@ import SlideEx3 from './Projects/PantryPal';
 import SlideEx4 from './Projects/CPUHeatsink';
 import SlideEx5 from './Projects/SkyjackShelf';
 // import SlideEx6 from './Projects/MagneticBelt';
-import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
+import { MdOutlineArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import { motion } from "framer-motion";
 import RearTub2 from './images/RearTub2.jpg';
 import pantrypal from './images/Login card.png'
 import pacemaker from './images/K64F-Board.jpg'
-import electromagneticbelt from './images/beltgif.gif'
 import heatsink from './images/Heatsink isometric.jpg'
 import ncrshelf from './images/ncrshelf.jpg'
 

@@ -5,17 +5,14 @@ import {
   HStack,
   Button,
   useBreakpointValue,
-  Spacer,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
   Link,
-  useMediaQuery,
   extendTheme 
 } from '@chakra-ui/react';
 
-import { experienceID } from './Experience';
 
 import "../App"
 
