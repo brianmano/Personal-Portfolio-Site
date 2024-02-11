@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
+import { Box, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
 // import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
 import { FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact, FaJava } from 'react-icons/fa';
 
