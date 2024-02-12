@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Link, VStack, Box, Heading, HStack, Button, Divider, useBreakpointValue } from '@chakra-ui/react';
+import { Spacer, Text, Flex, Link, VStack, Box, Heading, HStack, Button, Divider, useBreakpointValue } from '@chakra-ui/react';
 import { MdOutlineArrowOutward, MdOutlineArrowCircleUp } from "react-icons/md";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, } from 'react-icons/fa';
 import "../App"
@@ -30,16 +30,16 @@ const Contact = () => {
     const shouldRenderSecondHeading = useBreakpointValue({ base: false, md: true });
 
   return ( 
-    <Flex justify="flex-start" width="100%" padding="10" >
+    <Flex justify="flex-start" width="100%" paddingLeft="10" paddingy= "5" >
       <VStack align="flex-start" spacing="5" width='100%' overflow="hidden">
       <Flex width="100%" justify='left'>
   {shouldRenderSecondHeading ? (
     <div>
         <Flex width="100%" justify='center' align='left'>
-            <Heading fontFamily="Titillium Web, sans-serif;" color='black' fontSize={100} id="contact">
+            <Heading fontFamily="Titillium Web, sans-serif;" color='#eaebea' fontSize={100} id="contact">
                 Get In Touch
                 <Box display="inline-block" ml="2" verticalAlign="middle">
-                <MdOutlineArrowOutward size={90} color='black' />
+                <MdOutlineArrowOutward size={90} color='#eaebea' />
                 </Box>
             </Heading>
         </Flex>
@@ -60,20 +60,20 @@ const Contact = () => {
   </Flex>
     <HStack width="100%" spacing={4} justify='left' flexWrap="wrap">
         <Link href={emaiLink} isExternal>
-          <Button fontFamily="Titillium Web, sans-serif;" leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
+          <Button fontFamily="Titillium Web, sans-serif;" leftIcon={<FaEnvelope />} bg="#94161e" color = "white">
             {email}
           </Button>
         </Link>
-        <Button fontFamily="Titillium Web, sans-serif;" leftIcon={<FaPhone />} colorScheme='orange' variant='outline'>
+        <Button color= "white" fontFamily="Titillium Web, sans-serif;" leftIcon={<FaPhone />} bg='#b8561d'>
             289-788-9659
         </Button>
         <Link fontFamily="Titillium Web, sans-serif;" href={linkedin} isExternal>
-          <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline' >
+          <Button color = "white" leftIcon={<FaLinkedin />} bg="#194e94" >
             LinkedIn  
           </Button>
         </Link>
         <Link fontFamily="Titillium Web, sans-serif;" href={github} isExternal>
-        <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
+        <Button leftIcon={<FaGithub />} bgColor="#eaebea" textColor='black' variant='outline'
           sx={{
             '&:hover': {
               bgColor: "white",
@@ -85,10 +85,12 @@ const Contact = () => {
       </Button>
       </Link>
           </HStack>
-    <HStack width="100%" spacing={4} justify='left' as="article">
-        <Button fontFamily="Titillium Web, sans-serif;" variant='link'onClick={scrollToTop} leftIcon={<MdOutlineArrowCircleUp/>}>
+    <HStack width="100%" spacing={4} justify="space-between" align="center" as="article">
+        <Button color="#eaebea" fontFamily="Titillium Web, sans-serif;" variant="link" onClick={scrollToTop} leftIcon={<MdOutlineArrowCircleUp/>}>
             Back To Top
         </Button>
+        <Spacer />
+        <Text mr = "5" color="#eaebea" fontFamily="Titillium Web, sans-serif;">Project code is open source, feel free to fork and make your own version. </Text>
     </HStack>
     <Divider />
     </VStack>

@@ -60,8 +60,7 @@ const doubleArray = [
 ];
 
 const fontcolourtitle = "white"
-const fontcolour2 = "#D3D3D3"
-const fontcolour3 = "#979797"
+const fontcolour2 = "#eaebea"
 
 const Hero = () => {
   
@@ -110,14 +109,15 @@ const Hero = () => {
                 <IconButton
                   aria-label="Email"
                   icon={<FaEnvelope />}
-                  colorScheme="red"
+                  bg="#94161e"
                   variant="outline"
                 />
               ) : (
                 <Button
                 fontFamily="Titillium Web, sans-serif;" 
+                color = "white"
                 leftIcon={<FaEnvelope />} 
-                colorScheme="red" 
+                bg="#94161e" 
                 >
                   {email}
                 </Button>
@@ -128,8 +128,9 @@ const Hero = () => {
                 <IconButton
                   aria-label="LinkedIn"
                   icon={<FaLinkedin />}
-                  colorScheme="linkedin"
+                  bg="#194e94"
                   variant="outline"
+                  color = "white"
                 >
                   LinkedIn
                 </IconButton>
@@ -137,7 +138,8 @@ const Hero = () => {
                 <Button
                   fontFamily="Titillium Web, sans-serif;"
                   leftIcon={<FaLinkedin />}
-                  colorScheme="linkedin"
+                  bg="#194e94"
+                  color = "white"
                 >
                   LinkedIn
                 </Button>
@@ -149,8 +151,8 @@ const Hero = () => {
                 <IconButton
                   aria-label="GitHub"
                   icon={<FaGithub />}
-                  bgColor="#333"
-                  color="white"
+                  bgColor="#eaebea"
+                  color="black"
                   variant="outline"
                   _hover={{ bgColor: 'white', color: 'black' }}
                 >
@@ -160,8 +162,8 @@ const Hero = () => {
                 <Button
                   fontFamily="Titillium Web, sans-serif;"
                   leftIcon={<FaGithub />}
-                  bgColor="#333"
-                  textColor="white"
+                  bgColor="#eaebea"
+                  textColor="black"
                   variant="outline"
                   _hover={{ bgColor: 'white', textColor: 'black' }}
                 >

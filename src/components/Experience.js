@@ -29,7 +29,7 @@ import "../App";
 /* Present Jobs (if you have only 1 current job, you will have to scroll down and delete on of the cards)*/
 /* Card 1*/
 
-const fontcolour2 = "#D3D3D3";
+const fontcolour2 = "#eaebea";
 
 const experienceList = [
   {
@@ -77,8 +77,8 @@ export default class Experiences extends Component {
       slidesToShow: 3,
       slidesToScroll: 1,
       lazyLoad: true,
-      nextArrow: <MdArrowForwardIos color="black" />,
-      prevArrow: <MdOutlineArrowBackIosNew color="black" />,
+      nextArrow: <MdArrowForwardIos color="#eaebea" />,
+      prevArrow: <MdOutlineArrowBackIosNew color="#eaebea" />,
       responsive: [
         {
           breakpoint: 1024,
@@ -130,7 +130,8 @@ export default class Experiences extends Component {
             <Button
               fontFamily="Titillium Web, sans-serif;"
               paddingY="3"
-              colorScheme="red"
+              bg="#94161e"
+              color = "white"
               leftIcon={<IoDocumentAttach />}
             >
               Resume
@@ -177,7 +178,7 @@ export default class Experiences extends Component {
                         >
                           {experience.jobTitle}
                         </Heading>
-                        <Text fontFamily="Titillium Web, sans-serif;">
+                        <Text color = "black" fontFamily="Titillium Web, sans-serif;">
                           {experience.companyName}
                         </Text>
                         <Text
@@ -195,7 +196,7 @@ export default class Experiences extends Component {
                         paddingTop={2}
                         paddingX="4"
                         paddingBottom={2}
-                        color="gray"
+                        color="black"
                       >
                         {experience.timeline}
                       </Text>

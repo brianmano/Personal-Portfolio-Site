@@ -74,8 +74,8 @@ const ExtendedProjects = () => {
         draggable: false,
         rows: 3,
         slidesPerRow: 1,
-        nextArrow: <MdArrowForwardIos color="black"/>,
-      prevArrow: <MdOutlineArrowBackIosNew color = "black"/>,
+        nextArrow: <MdArrowForwardIos color="#eaebea"/>,
+      prevArrow: <MdOutlineArrowBackIosNew color="#eaebea"/>,
         
     };
     const [selectedProject, setSelectedProject] = useState(null);
@@ -124,21 +124,38 @@ const ExtendedProjects = () => {
                 direction={{ base: 'column', sm: 'row' }}
                 overflow="hidden"
                 variant="outline"
+                
                 maxW={{ base: '100%', sm: '100%' }}
+                borderWidth={0} // Remove the border
               >
-                <Image
-                  objectFit="cover"
+                <Box
+                  position="relative"
                   width={{ base: '100%', md: '80%' }}
                   minWidth="40%"
                   height="250px"
-                  src={project.image}
-                  alt="Project Card"
-                />
+                >
+                  <Image
+                    objectFit="cover"
+                    width="100%"
+                    height="100%"
+                    src={project.image}
+                    alt="Project Card"
+                    style={{ filter: 'grayscale(80%)' }} // Apply grayscale filter to make the image black and white
+                  />
+                  <Box
+                    position="absolute"
+                    top="0"
+                    left="0"
+                    width="100%"
+                    height="100%"
+                    bg="rgba(216, 50, 60, 0.15)"
+                  />
+                </Box>
                 <Stack width="auto">
                   <CardBody  width="auto">
-                      <Heading fontFamily="Titillium Web, sans-serif;">{project.name}</Heading>
+                      <Heading color = "black"fontFamily="Titillium Web, sans-serif;">{project.name}</Heading>
                         <Box  whiteSpace="normal">
-                        <Text  fontFamily="Titillium Web, sans-serif;" maxWidth="100%" py="2">{project.description}</Text>
+                        <Text  color = "black" fontFamily="Titillium Web, sans-serif;" maxWidth="100%" py="2">{project.description}</Text>
                         </Box>           
                     <Flex justifyContent="flex-end">
                     {project.tags.map((tag, tagIndex) => (

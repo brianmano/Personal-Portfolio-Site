@@ -41,10 +41,12 @@ const Navbar = () => {
         align="center"
         width="100%"
         position="fixed"
-        bg="rgba(255, 255, 255, 0.4)"
+        bg="rgba(216, 50, 60, 0.5)" // Set the background color with some transparency
         zIndex={9}
+        style={{
+          backdropFilter: "blur(10px)" // Apply a blur effect
+        }}
       >
-
 
       {mobileNav ? (
         
