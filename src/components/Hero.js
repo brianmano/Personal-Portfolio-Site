@@ -110,7 +110,6 @@ const Hero = () => {
                   aria-label="Email"
                   icon={<FaEnvelope />}
                   bg="#94161e"
-                  variant="outline"
                 />
               ) : (
                 <Button
@@ -129,7 +128,6 @@ const Hero = () => {
                   aria-label="LinkedIn"
                   icon={<FaLinkedin />}
                   bg="#194e94"
-                  variant="outline"
                   color = "white"
                 >
                   LinkedIn
