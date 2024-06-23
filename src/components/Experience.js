@@ -33,9 +33,9 @@ const fontcolour2 = "#eaebea";
 
 const experienceList = [
   {
-    present: false,
-    future: true,
-    jobTitle: "Telematic Platform Developer",
+    present: true,
+    future: false,
+    jobTitle: "Telemetry Platform Developer",
     companyName: "Scalar Performance Inc.",
     companyDepartment: "Embedded Systems Integration and Configuration",
     timeline: "May 2024 - August 2024",
@@ -124,7 +124,7 @@ export default class Experiences extends Component {
             link with my resume attached:
           </Text>
           <Link
-            href="https://drive.google.com/file/d/1lgre9ghRHktAR7Ym0qdcK-wDvQXLi6eD/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1q6sITnvTjJQpHgGuAHlJx_U3ySFROxPy/view?usp=sharing"
             isExternal
           >
             <Button
